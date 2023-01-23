@@ -50,17 +50,13 @@ body{
 }
 .nav .nav1{
   
-    margin-top: 70px;
+    margin-top: 60px;
     margin-left: 80px;
 }
 .nav .nav2{
-  
-  margin-top: 70px;
   margin-left: 150px;
 }
 .nav .nav3{
-  
-  margin-top: 30px;
   margin-left: 150px;
 }
 .nav a{
@@ -174,6 +170,7 @@ body{
     transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
   }
   .promo button:hover {
+    cursor: pointer;
     background: rgba(255, 255, 255, .2);
   }
   .social-icons {
@@ -287,6 +284,7 @@ display: inline-block;
   text-decoration:none;
   text-shadow: 20px;
   font-size: 16px;
+  cursor: grabbing;
 }
 
 .ad{
@@ -307,6 +305,7 @@ form {
   margin-right: 200px;
 }
  input{
+  position: absolute;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -318,9 +317,8 @@ form {
   padding-left: 15px;
 }
 form button {
-  position: absolute; 
-  top: 10;
-  right: 0px;
+  position:relative;
+  left: 250px;
   width: 42px;
   height: 42px;
   border: none;
@@ -335,3 +333,192 @@ form button:before {
   color: #F9F0DA;
 }
 
+.search_field{
+  display: inline-block;
+  position: relative;
+  left: 250px;
+  bottom: 60px;
+}
+.find_buttons{
+  position: absolute;
+  right: 0px;
+  bottom: 500px;
+}
+.field_border{
+  margin-right: 100px;
+  padding: 80px;
+  border-radius: 20px;
+  background-color: #7BA7AB;
+}
+.field_border h1{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 50px;
+    color: rgb(255, 255, 255);
+    text-decoration:none;
+    text-shadow: 20px;
+    font-size: 26px;
+    justify-content: center;
+    left: 35px;
+}
+.field_border button{
+  padding: 15px;
+  display: block;
+  position: relative;
+  border:burlywood;
+  border-radius: 10px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 26px;
+  color: burlywood;
+ 
+}
+.field_border button:hover{
+background-color: #e3e7de;
+cursor: pointer;
+}
+
+.i_find{
+  left: 7px;
+  bottom: 25px;
+  
+}
+.i_miss{
+  top: 25px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 24px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.questions{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: burlywood;
+  margin-right: 10px;
+  text-decoration:none;
+  text-shadow: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.acc p{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: burlywood;
+  font-size: 22px;
+
+}
+
+.qr_photo{
+  display: inline-block;
+  position: relative;
+  left: 60%;
+  background-color: #7BA7AB;
+  border-radius: 20px;
+  padding: 20px;
+}
+.qr_photo img{
+  left: 70px;
+  position: relative;
+}
+.p_blc{
+  
+  border-radius: 5px;
+  padding: 5px;
+}
+.download{
+  display: inline-block;
+}
+.dd{
+  background-color: #7BA7AB;
+  border-radius: 20px;
+  padding: 20px;
+position: relative;
+left: -40%;
+bottom:205px;
+padding-bottom: 100px;
+}
+.dd p{
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+}
+.dd button{
+  position: relative;
+  left: 130px;
+  top: 70px;
+}
+.button_download {
+  font-size: 20px;
+  display: inline-block;
+  padding: 20px 30px;
+  position: relative;
+  color: burlywood;
+  border: 5px solid #e0e0e0;
+  border-radius: 15px;
+  background: none;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #e0e0e0;
+}
+.button_download:before, .button_download:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+.button_download:hover:before, 
+.button_download:hover:after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.button_download:hover:before {
+  transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+.button_download:hover:after {
+  transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+}
+.button_download:hover {
+  cursor: pointer;
+  background:#e3e7de;
+  border-color:#e3e7de;
+}
+.qr_photo p{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+}
+.download{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: burlywood;
+  font-size: 22px;
+
+}

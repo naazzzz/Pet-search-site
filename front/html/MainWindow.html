@@ -2,14 +2,17 @@
 <html lang="ru">
   <title>Pet Search Service</title>
   <head>
+    <script defer src="/front/js/dropdown.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/front/style/MainStyle.css">
     <link rel="stylesheet" href="/front/style/slider.css">
     <link rel="stylesheet" href="/front/style/font-awesome-4.7.0/css/font-awesome.min.css">
     <script defer src="/front/js/slider.js"></script>
     <link rel="stylesheet" href="/front/style/swapper.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    </head>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </head>
     <body>
       <nav class="header">
         <div class="Logo">
@@ -17,15 +20,14 @@
           <ul class="nav">
             <li class="nav1"><a href="">Католог</a>  
             <li class="nav2"><a href="">Помощь</a>
-              <li class="nav3"><a>
-              <form action="" method="get">
-                <input placeholder="Адрес или номер объявления" type="search">
-                <button class="fa-search" type="submit"></button></a>
-              </form></li>
         </ul>
         
     </div>
-    
+    <div class="search_field">
+      <form action="" method="get">
+        <input placeholder="Адрес или номер объявления" type="search">
+        <button class="fa-search" type="submit"></button>
+      </form></div>
        <div class="user">
         
         <h1 class="sity">Ваш город: Ростов-на-Дону</h1>
@@ -33,15 +35,21 @@
         
     </div>
     
-    <div class="promo">
-      
+    <div class="promo">  
     <h1>Поможем найти верного друга</h1>
     <p>Сервис для поиска потерянных домашних животных</p>
     <button class="map_button"><img class="icon_photo" src="/img/map-icon.png"><h1>Перейти к объявлениям</h1></button>
-    
-    
     </div>
     
+    <div class="find_buttons">
+      <div class="field_border">
+        <h1>Что случилось?</h1>
+        <button class="i_find">Я нашел питомца</button>
+        <button class="i_miss">Я потерял питомца</button>
+      </div>
+    </div>
+
+
     </nav>
     <main>
         <div class="content">
@@ -89,9 +97,53 @@
                   </div>
                   <div class="swiper-button-next"></div>
                   <div class="swiper-button-prev"></div>
+                  
             </div>
-
         </div>
+        <div class="qr_mobile">
+          <h1 class="ad questions">Воспользуйтесь нашим удобным мобильным приложением, чтобы в трудной ситуцаии быстро воспользоваться нашим сервисом</h1>
+          <div class="qr_photo">
+            <div class="p_blc">
+            <p>Скачать по ссылке с помощью QR-кода</p>
+          </div>
+          <img src="/img/qr.png">
+        </div>
+          <div class="download">
+            <div class="dd"><div class="p_blc">
+          <p>Скачать по прямой ссылке с нашего сервиса<br>
+          для Android
+          </b></p></div>
+          <button class="button_download">Скачать</button>
+        </div>
+        </div>
+        </div>
+        <div class="acc">
+        <h1 class="ad questions "> Часто задаваемые вопросы</h1>
+        <button class="accordion">Я потерял питомца или нашел питомца на улице. Что делать?</button>
+        <div class="panel">
+        <p>Добавьте объявление о пропавшем или найденном питомце по этой ссылке. Добавьте фотографию питомца, максимально опишите питомца и обстоятельства потери/находки, укажите свои контактные данные, планируется ли вознаграждение нашедшему и опубликуйте объявление. После размещения объявления вы получите подробные рекомендации по поиску пропавшего животного.</p>
+        </div>
+        <button class="accordion">Могу ли я опубликовать объявление бесплатно?</button>
+        <div class="panel">
+        <p>Да, объявления публикуются на сайте бесплатно. Но мы рекомендуем воспользоваться платными опциями, которые серьезно повышают шансы быстрее вернуть пропавшего питомца домой. </p>
+        </div>
+        <button class="accordion">Кто такие волонтеры и кто может им стать?</button>
+        <div class="panel">
+        <p>Волонтеры – это люди, зарегистрировавшиеся на сайте, которые помогают в поисках пропавших животных. Волонтерам приходят уведомления о пропавших питомцах в районе их места жительства и работы, и они добровольно оказывают посильную помощь в поисках. Волонтером может стать любой человек, неравнодушный к животным.  </p>
+        </div>
+        <button class="accordion">Возможно ли связаться с вашими волонтерами?</button>
+        <div class="panel">
+        <p>Мы не можем поделиться с вами контактами волонтеров, но все волонтеры в районе пропажи или находки питомца получат уведомления на почту о вашем случае и постараются оказать посильную помощь. </p>
+        </div>
+        <button class="accordion">Какие гарантии что мой питомец найдется?</button>
+        <div class="panel">
+        <p>Мы не можем гарантировать что ваш питомец обязательно найдется. Но накопленный нами опыт позволяет в несколько раз увеличить шансы на успешное завершение поисков.</p>
+        </div>
+        <button class="accordion">Как снять объявление с сайта?</button>
+        <div class="panel">
+        <p>Перейдите в свой профиль (на компьютере иконка в правом верхнем углу, на телефоне – в правом нижнем). Напротив объявления вы увидите красную надпись “Снять с публикации”, после нажатия на которую ваше объявление удалится из каталога, но останется у вас в профиле на странице “Снятые с публикации”.</p>
+        </div>
+</div>
     </main>
      </body>
   <footer>
@@ -109,4 +161,5 @@
       </div>
 
   </footer>
+  
 </html>

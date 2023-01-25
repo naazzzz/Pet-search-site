@@ -27,8 +27,12 @@
       right: auto;
     }
     .swiper-button-next, .swiper-button-prev {
-        position: absolute;
-        top:80%
+        visibility: hidden;
+    }
+    @media (max-width: 1280px) {
+      .swiper-button-next, .swiper-button-prev {
+        visibility: hidden;
+    }
     }
     .swiper-slide p, .swiper-slide h1{
         display: inline-block;

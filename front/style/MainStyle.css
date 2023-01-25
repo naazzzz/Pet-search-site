@@ -5,7 +5,7 @@ body{
 .header{
     display: inline-block;
     width: 100%;
-    height: 500px;
+    height: 550px;
     background-image:   url(/img/header.jpg) ;
     -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
@@ -14,17 +14,14 @@ body{
 }
 
 .mainLogo{
-  margin-top: 10px;
-  margin-left: 50px;
     height: 100px;
     width: 120px;
-    
     display: inline-block;
 }
 .Logo{
-    display: inline-block;
-    height: 70px;
-    width: 300px;
+    
+    height: 120px;
+    width: 100%;
 }
 
 .name{
@@ -38,37 +35,61 @@ body{
     color: rgb(222, 184, 135);
     text-shadow: 20px;
 }
+.navigation{
+  width: 100%;
+  height: 120px;
+}
 .nav{
+  width: 100%;
+  height: 120px;
   margin: 0px;
   padding: 0px;
-    display: inline-block;
-    position: absolute;
-    
+    display: flex;
+    align-items: center;
 }
+
 .nav li{
     display: inline-block; 
 }
+.nav .nav0{
+  width: 10%;
+  height: 120px;
+}
+
 .nav .nav1{
-  
-    margin-top: 60px;
-    margin-left: 80px;
+    width: 8%;
+    height: 120px;
+}
+.nav .nav1 a{
+  padding-top: 40px;
+}
+.nav .nav2 a{
+  padding-top: 40px;
 }
 .nav .nav2{
-  margin-left: 150px;
+  width: 8%;
+    height: 120px;
 }
 .nav .nav3{
-  margin-left: 150px;
+  width: 20%;
+  height: 120px;
+}
+.nav .nav4{
+  padding-top: 50px;
+  width: 20%;
+  height: 120px;
+  margin-right: auto;
+  margin-left: 35%;
 }
 .nav a{
-    position: absolute;
-    top: 50%;
+    
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     color: burlywood;
     font-weight: 600;
     text-decoration:none;
     text-shadow: 20px;
-    display: inline-block;
+    display: flex;
 }
 
 .sity{
@@ -77,10 +98,6 @@ body{
 }
 .user{
     display: inline-block; 
-    position: absolute;
-    right: 0;
-    margin-right: 10px;
-    margin-top: 20px;
 }
 .user h1{
     display: inline-block; 
@@ -90,6 +107,7 @@ body{
     text-shadow: 20px;
 }
 .user a{
+    display: inline-block;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: burlywood;
     margin-right: 10px;
@@ -98,13 +116,16 @@ body{
 }
 
 .promo{
-  
-   margin-left: 80px;
+  display: inline-block;
+  width: 50%;
+   
+}
+.promo_contain{
+  margin-left: 20%;
 }
 .promo h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(255, 255, 255);
-    margin-right: 10px;
     text-decoration:none;
     text-shadow: 20px;
     
@@ -284,14 +305,15 @@ display: inline-block;
   text-decoration:none;
   text-shadow: 20px;
   font-size: 16px;
+}
+.swiper{
   cursor: grabbing;
 }
 
 .ad{
+  text-align: center;
   background-color: rgb(255, 255, 255);
   margin-top: 0px;
-  padding-left: 100px;
-  padding-top: 20px;
 }
 
 .icon_photo{
@@ -335,17 +357,16 @@ form button:before {
 
 .search_field{
   display: inline-block;
-  position: relative;
-  left: 250px;
-  bottom: 60px;
+  padding-top: 32px;
 }
+
 .find_buttons{
-  position: absolute;
-  right: 0px;
-  bottom: 500px;
+  display: inline-block;
+  width: 49%;
 }
 .field_border{
-  margin-right: 100px;
+  margin-left: 50%;
+  display: inline-block;
   padding: 80px;
   border-radius: 20px;
   background-color: #7BA7AB;
@@ -413,6 +434,8 @@ cursor: pointer;
   overflow: hidden;
 }
 .questions{
+  height: 20px;
+  width: 100%;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: burlywood;
   margin-right: 10px;
@@ -432,11 +455,10 @@ cursor: pointer;
 
 .qr_photo{
   display: inline-block;
-  position: relative;
-  left: 60%;
   background-color: #7BA7AB;
   border-radius: 20px;
   padding: 20px;
+  margin-left: 32%;
 }
 .qr_photo img{
   left: 70px;
@@ -449,15 +471,13 @@ cursor: pointer;
 }
 .download{
   display: inline-block;
+  width: 50%;
 }
 .dd{
   background-color: #7BA7AB;
   border-radius: 20px;
   padding: 20px;
-position: relative;
-left: -40%;
-bottom:205px;
-padding-bottom: 100px;
+  padding-bottom: 176px;
 }
 .dd p{
   color: white;
@@ -521,4 +541,47 @@ padding-bottom: 100px;
   color: burlywood;
   font-size: 22px;
 
+}
+.qr_mobile{
+  height: 500px;
+ 
+}
+.navigation{
+  display: inline-block;
+}
+.download_wrapper{
+  display: inline-block;
+  padding-left: 22%;
+  padding-right: auto;
+}
+.qr_photo_wrapper{
+  display: inline-block;
+  width: 50%;
+}
+.mega_wrapper{
+  display: flex;
+}
+.slider1 .ad{
+  margin-top: 20px;
+}
+@media (max-width: 1280px) {
+  .field_border{
+    margin-left: 20%;
+  }
+  .nav .nav4{
+    margin-left: 20%;
+    width: auto;
+  }
+  .qr_photo{
+    margin-left: auto;
+  }
+  .download_wrapper{
+    margin-left: auto;
+  }
+  .header{
+    background-size: 100% 100%;
+    
+    background-repeat: no-repeat;
+  }
+  
 }

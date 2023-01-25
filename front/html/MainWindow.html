@@ -16,31 +16,31 @@
     <body>
       <nav class="header">
         <div class="Logo">
-          <a href=""><img src ="/img/Logo.png" class="mainLogo"></a>
+          <div class="navigation">
           <ul class="nav">
-            <li class="nav1"><a href="">Католог</a>  
-            <li class="nav2"><a href="">Помощь</a>
+            <li class ="nav0"><a href=""><img src ="/img/Logo.png" class="mainLogo"></a>
+            <li class ="nav1"><a href="">Католог</a>  
+            <li class ="nav2"><a href="">Помощь</a>
+            <li class ="nav3"><div class="search_field">
+              <form action="" method="get">
+                <input placeholder="Адрес или номер объявления" type="search">
+                <button class="fa-search" type="submit"></button>
+              </form></div></li>
+            <li class = "nav4"><div class="user">
+              <h1 class="sity"> Ростов-на-Дону</h1>
+              <a href=""><h1 class="auth">Авторизация</h1></a> 
+              </div></li>
+          </div>
         </ul>
-        
+      </div> 
     </div>
-    <div class="search_field">
-      <form action="" method="get">
-        <input placeholder="Адрес или номер объявления" type="search">
-        <button class="fa-search" type="submit"></button>
-      </form></div>
-       <div class="user">
-        
-        <h1 class="sity">Ваш город: Ростов-на-Дону</h1>
-        <a href=""><h1 class="auth">Авторизация</h1></a> 
-        
-    </div>
-    
-    <div class="promo">  
-    <h1>Поможем найти верного друга</h1>
+    <div class="promo">
+    <div class="promo_contain">  
+    <h1>Поможем найти вашего друга</h1>
     <p>Сервис для поиска потерянных домашних животных</p>
     <button class="map_button"><img class="icon_photo" src="/img/map-icon.png"><h1>Перейти к объявлениям</h1></button>
     </div>
-    
+  </div>
     <div class="find_buttons">
       <div class="field_border">
         <h1>Что случилось?</h1>
@@ -54,7 +54,7 @@
     <main>
         <div class="content">
             <div class="slider1">
-                <h1 class="ad">Последние актуальные объявления для вашей геолокации</h1>
+                <h1 class="ad">Последние актуальные объявления</h1>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide"><img src="/img/Слайдер1.jpg">
@@ -101,14 +101,18 @@
             </div>
         </div>
         <div class="qr_mobile">
-          <h1 class="ad questions">Воспользуйтесь нашим удобным мобильным приложением, чтобы в трудной ситуцаии быстро воспользоваться нашим сервисом</h1>
+          <h1 class="ad questions">Воспользуйтесь мобильным приложением</h1>
+          <div class="mega_wrapper">
+          <div class="qr_photo_wrapper">
           <div class="qr_photo">
             <div class="p_blc">
             <p>Скачать по ссылке с помощью QR-кода</p>
           </div>
           <img src="/img/qr.png">
         </div>
+        </div>
           <div class="download">
+            <div class="download_wrapper">
             <div class="dd"><div class="p_blc">
           <p>Скачать по прямой ссылке с нашего сервиса<br>
           для Android
@@ -117,6 +121,8 @@
         </div>
         </div>
         </div>
+        </div>
+      </div>
         <div class="acc">
         <h1 class="ad questions "> Часто задаваемые вопросы</h1>
         <button class="accordion">Я потерял питомца или нашел питомца на улице. Что делать?</button>

@@ -1,0 +1,221 @@
+body{
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.menu{
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid;
+    border-color: #77c0c7;
+}
+.menu_wrapper{
+    height: 80px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.menu_wrapper1{
+    display: inline-block;
+    height: 80px;
+    float: right;
+padding: 30px 0;
+
+}
+.menu_wrapper a{
+    text-decoration: none;
+    font-size: 20px;
+    color: burlywood
+}
+.top_info{
+    height: 120px;
+    width: 100%;
+}
+.top_info_wrapper{
+    height: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.top_info_wrapper1{
+    height: 120px;
+    margin: 0 auto;
+text-align: left;
+padding: 0px 0;
+}
+.top_info_wrapper1 a,.top_info_wrapper1 p{
+    display: inline-block;
+    text-decoration: none;
+}
+.top_info_wrapper1 h1{
+    margin-bottom: 0;
+    font-size: 26px;
+}
+
+.top_info_wrapper1 a, .top_info_wrapper1 p{
+    color: rgb(195, 195, 195);
+}
+.qu1 p, .qu2 p{
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    border-bottom: 1px solid;
+    border-color: #77c0c7;
+    color: black;
+}
+.qus button{
+    
+    border-width: 2px; 
+    
+    padding: 15px;
+    font-size: medium;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    margin: 5px;
+}
+.btn_next{
+    margin-top: 10%;
+    cursor: pointer;
+    color: white;
+    border-width: 2px; 
+    border-color:#1bbc9b;
+    background-color: #1bbc9b;
+    padding: 15px;
+    font-size: medium;
+    display: inline-block;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    
+}
+.btn_style_active{
+    color: #77c0c7;
+    border-color:#77c0c7;
+}
+.btn_style_none{
+    color: black;
+    border-color:black;
+}
+.progress_line{
+    background-color: #d8e1db;
+    border-radius: 4px;
+    height: 5px;
+    margin-top: 16px;
+    overflow: hidden;
+    position: relative;
+}
+.progress_line_bg{
+    background-color: #77c0c7;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    width: 20%;
+    z-index: 1;
+}
+.bg2{
+    width: 40%;
+}
+.input__wrapper {
+    width: 100%;
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+  }
+   
+  .input__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+   
+  .input__file-icon-wrapper {
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-right: 1px solid #fff;
+  }
+   
+  .input__file-button-text {
+    line-height: 1;
+    margin-top: 1px;
+  }
+   
+  .input__file-button {
+    width: 100%;
+    max-width: 290px;
+    height: 60px;
+    background: #1bbc9b;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    border-radius: 3px;
+    cursor: pointer;
+    
+  }
+  .top_info_wrapper1 a {
+    color:#77c0c7;
+  }
+  .miss_form{
+    margin-top: 5%;
+  }
+  .btn_download{
+    visibility: hidden;
+  }
+  .back_wrapper{
+    display: inline-block;
+    padding: 30px 0;
+  }
+  .back_wrapper i{
+    padding-right: 10px;
+  }
+  .menu_wrapper1 i{
+    padding-left: 5px;
+    color: burlywood;
+  }
+  .invisible_block{
+    display: none;
+  }
+  .invisible_block_active{
+    width: 100%;
+    display: block;
+  }
+  .photo_download{
+    object-fit: contain;
+    height: 100%;
+    left: 0;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 0 5px 15px;
+    overflow: hidden;
+    position: relative;
+    width: calc(33.3333% - 10px);
+  }
+  .miss_form_active{
+    visibility: hidden;
+  }

@@ -19,11 +19,9 @@ body{
     display: inline-block;
 }
 .Logo{
-    
     height: 120px;
     width: 100%;
 }
-
 .name{
     display: inline-block;
     margin-top: 10px;
@@ -76,7 +74,7 @@ body{
 }
 .nav .nav4{
   padding-top: 50px;
-  width: 20%;
+  width: 40%;
   height: 120px;
   margin-right: auto;
   margin-left: 35%;
@@ -139,13 +137,21 @@ body{
     font-size: 20px;
     
 }
+.map_button1 h1{
+  display: inline-block;
+}
+.map_button1 img{
+  display: inline-block;
+}
 
+.btns{
+  display: block;
+}
 
 .promo button {
     font-size: 14px;
     text-decoration: none;
-    display: inline-block;
-    padding: 20px 30px;
+    display: block;
     position: relative;
     color: white;
     border: 1px solid rgba(255, 255, 255, .4);
@@ -154,7 +160,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    width: 300px;
+    width: 400px;
   }
   .promo button:before, button:after {
     content: "";
@@ -311,6 +317,7 @@ display: inline-block;
 }
 
 .ad{
+  color: black;
   text-align: center;
   background-color: rgb(255, 255, 255);
   margin-top: 0px;
@@ -437,7 +444,7 @@ cursor: pointer;
   height: 20px;
   width: 100%;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: burlywood;
+  color: black;
   margin-right: 10px;
   text-decoration:none;
   text-shadow: 20px;
@@ -447,8 +454,10 @@ cursor: pointer;
   margin-top: 50px;
 }
 .acc p{
+  line-height: 1.5;
+  margin: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: burlywood;
+  color: black;
   font-size: 22px;
 
 }
@@ -477,17 +486,20 @@ cursor: pointer;
   background-color: #7BA7AB;
   border-radius: 20px;
   padding: 20px;
-  padding-bottom: 176px;
+  height: 333px;
 }
 .dd p{
+  text-align: center;
+  line-height: 1.5;
   color: white;
   font-size: 22px;
   font-weight: 600;
 }
 .dd button{
-  position: relative;
-  left: 130px;
-  top: 70px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 30%;
 }
 .button_download {
   font-size: 20px;
@@ -583,5 +595,7 @@ cursor: pointer;
     
     background-repeat: no-repeat;
   }
-  
+  .dd button{
+    margin-left: 25%;
+  }
 }

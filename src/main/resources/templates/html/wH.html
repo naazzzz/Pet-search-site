@@ -2,10 +2,11 @@
 <html lang="ru">
   <title>Pet Search Service</title>
   <head>
-    <link rel="stylesheet" href="/templates/style/MainStyle.css">
-    <link rel="stylesheet" href="/templates/style/wHstyle.css">
-    <link rel="stylesheet" href="/templates/style/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script defer src="/templates/js/btns.js" ></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+    <link rel="stylesheet" href="/style/MainStyle.css">
+    <link rel="stylesheet" href="/style/wHstyle.css">
+    <link rel="stylesheet" href="/style/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script defer src="/js/btns.js" ></script>
   </head>
   <body>
     <div class="header">
@@ -13,7 +14,7 @@
         <div class="Logo">
           <div class="navigation">
           <ul class="nav">
-            <li class ="nav0"><a href=""><img src ="/img/Logo.png" class="mainLogo"></a>
+            <li class ="nav0"><a href="/MainWindow"><img src ="/img/Logo.png" class="mainLogo"></a>
             <li class ="nav1"><a href="">Католог</a>  
             <li class ="nav2"><a href="">Помощь</a>
             <li class ="nav3"><div class="search_field">
@@ -23,9 +24,9 @@
               </form></div></li>
             <li class = "nav4"><div class="user">
               <h1 class="sity"> Ростов-на-Дону</h1>
-              <a href=""><h1 class="auth">Авторизация</h1></a> 
+              <a href="/Auth"><h1 class="auth">Авторизация</h1></a>
               </div></li>
-          </div>
+
         </ul>
       </div> 
     </div>
@@ -38,15 +39,15 @@
       <div class="container">
       <div class="info_box">
         <h1>Новое объявление</h1>
-        <a href="">Главная /</a>
+        <a href="/MainWindow">Главная /</a>
         <p>Новое объявление</p>
       </div>
       <div class="find_box">
         <div class="find_box_wrapper">
         <img src="/img/find_pet.jpg">
         <h1>Что случилось?</h1>
-        <button class ="btn1" onclick="document.location='/templates/html/wH_form1.html'">Я потерял питомца</button>
-        <button class ="btn2" onclick="document.location='/templates/html/wH_form1.html'">Я нашел питомца</button>
+        <button class ="btn1" onclick="document.location='CreateAd?form=lost&step=1'">Я потерял питомца</button>
+        <button class ="btn2" onclick="document.location='CreateAd?form=find&step=1'">Я нашел питомца</button>
         <p>Хотите помогать в поиске пропавших домашних животных?</p>
         <a href="">Станьте волонтёром</a>
       </div>

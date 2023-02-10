@@ -31,27 +31,20 @@
         </div>
       </div>
       <div class="question">
-        <h1>2/5: Фото</h1>
-        <p>Добавьте фотографии. Это увеличит шансы на нахождение питомца.</p>
+        <h1>3/5: Время и место</h1>
+        <p th:text:="'Когда и где вы '+${wh}+ 'питомца?'"/>
         <div class="qus">
           <div class="qu1">
-            <p>Фотографии</p><br>
+            <form>
+              <label for="date">Укажите дату и время</label>
+            <input type="datetime-local" id="date" name="datelost" value="2023-02-11T08:30">
+              <label for="place">Укажите место</label>
+              <input type="text" id="place" name="datelost" value="Ул.Орбитальная, г. Ростов-на-Доту">
+            </form>
           </div>
         </div>
-        <div class="invisible_block" id="invisible_block">
-    <img id="photo_download" class="photo_download"><br>
-    <button class="btn_next" id="btn_next1">Далее</button>
-  </div>
-    <form id="form_download" action="/templates/html/wH_form3.html" method="post" enctype="multipart/form-data">
-        <div class="input__wrapper">
-            <input name="file" type="file" id="input__file" class="input input__file" multiple>
-            <label for="input__file" class="input__file-button">
-               <span class="input__file-icon-wrapper"><i class="fa fa-download" aria-hidden="true"></i></span>
-               <span class="input__file-button-text">Выберите файл</span>
-            </label>
-         </div>
-    </form>
-    <a href="/templates/html/wH_form3.html" class="miss_form" id="miss_form">Пропустить шаг</a>
+
+        <button class="btn_next" id="btn_next">Далее</button>
       </div>
     </div>
     </div>

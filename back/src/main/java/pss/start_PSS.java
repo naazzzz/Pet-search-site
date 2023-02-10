@@ -1,13 +1,13 @@
-package com.example.PSS;
+package pss;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PssApplication {
+public class start_PSS {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PssApplication.class, args);
+		SpringApplication.run(start_PSS.class, args);
 	}
 
 }

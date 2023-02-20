@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <title>Pet Search Service</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+    <link rel="stylesheet" href="/style/MainStyle.css">
+    <link rel="stylesheet" href="/style/wHstyle.css">
+    <link rel="stylesheet" href="/style/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script defer src="/js/btns.js" ></script>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="header">
+        <div class="Logo">
+          <div class="navigation">
+          <ul class="nav">
+            <li class ="nav0"><a href="/MainWindow"><img src ="/img/Logo.png" class="mainLogo"></a>
+            <li class ="nav1"><a href="">Католог</a>  
+            <li class ="nav2"><a href="">Помощь</a>
+            <li class ="nav3"><div class="search_field">
+              <form action="" method="get">
+                <input placeholder="Адрес или номер объявления" type="search">
+                <button class="fa-search" type="submit"></button>
+              </form></div></li>
+            <li class = "nav4"><div class="user">
+              <h1 class="sity"> Ростов-на-Дону</h1>
+              <a href="/Auth"><h1 class="auth">Авторизация</h1></a>
+              </div></li>
+
+        </ul>
+      </div> 
+    </div>
+    
+
+
+    </nav>
+    </div>
+    <main>
+      <div class="container">
+      <div class="info_box">
+        <h1>Новое объявление</h1>
+        <a href="/MainWindow">Главная /</a>
+        <p>Новое объявление</p>
+      </div>
+      <div class="find_box">
+        <div class="find_box_wrapper">
+        <img src="/img/find_pet.jpg">
+        <h1>Что случилось?</h1>
+        <button class ="btn1" onclick="document.location='CreateAd?form=lost&step=1'">Я потерял питомца</button>
+        <button class ="btn2" onclick="document.location='CreateAd?form=find&step=1'">Я нашел питомца</button>
+        <p>Хотите помогать в поиске пропавших домашних животных?</p>
+        <a href="">Станьте волонтёром</a>
+      </div>
+      </div>
+    </div>
+    </main>
+  </body>
+  <footer>
+    <ul class="social-icons">
+      <li><a class="social-icon-twitter" href="#" title="..." target="_blank" rel="noopener"></a></li>
+      <li><a class="social-icon-fb" href="#" title="..." target="_blank" rel="noopener"></a></li>
+      <li><a class="social-icon-vk" href="#" title="..." target="_blank" rel="noopener"></a></li>
+      <li><a class="social-icon-telegram" href="#" title="..." target="_blank" rel="noopener"></a></li>
+      <li><a class="social-icon-youtube" href="#" title="..." target="_blank" rel="noopener"></a></li>
+  </ul>
+
+  <div class="footer-contacts" >
+      <div class="email">artem_berezhnov@mail.ru</div>
+      <div class ="copyright">© «petsearch.ru», 2022</div>
+  </div>
+  </footer>
+</html>

@@ -1,10 +1,13 @@
 package com.pss.PSS.model;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "role", schema = "pss")
-public class RoleEntity {
+public class RoleEntity implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -13,6 +16,20 @@ public class RoleEntity {
     @Column(name = "name", nullable = false, length = 45)
     private String name;
 
+    @Transient
+    @ManyToMany(mappedBy = "roles")
+    private Set<UsersEntity> users;
+    public RoleEntity() {
+    }
+
+    public RoleEntity(int id) {
+        this.id = id;
+    }
+
+    public RoleEntity(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
     public int getId() {
         return id;
     }
@@ -47,5 +64,10 @@ public class RoleEntity {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String getAuthority() {
+        return getName();
     }
 }

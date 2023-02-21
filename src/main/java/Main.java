@@ -1,3 +1,4 @@
+import com.pss.PSS.StartPss;
 import jakarta.persistence.metamodel.Metamodel;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
@@ -39,6 +40,7 @@ public class Main {
                 for (Object o : query.list()) {
                     System.out.println("  " + o);
                 }
+                StartPss.main(args);
             }
         } finally {
             session.close();

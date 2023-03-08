@@ -22,7 +22,7 @@
       </ul>
     </div>
     <div ng-app ng-init="checked = false">
-				        <form class="form-signin" action="" method="post" name="form">
+				        <form id="form_singin" class="form-signin" action="" method="post" name="form">
           <label for="username">Имя пользователя или email</label>
           <input class="form-styling" type="text" name="username" placeholder="" id="username"/>
           <label for="password">Пароль</label>
@@ -30,20 +30,20 @@
           <input type="checkbox" id="checkbox"/>
           <label for="checkbox" ><span class="ui"></span>Запомнить меня</label>
           <div class="btn-animate">
-            <a class="btn-signin">Войти</a>
+              <button type="submit" class="btn-signin" id="submit" >Войти</button>
           </div>
 				        </form>
         
-				        <form class="form-signup" action="" method="post" name="form">
-          <label for="fullname">Полное имя</label>
-          <input class="form-styling" type="text" name="fullname" placeholder="" id="fullname"/>
+				        <form id="form_singup" class="form-signup" action="" method="post" name="form_singup">
+          <label for="usernameup">Логин</label>
+          <input class="form-styling" type="text" name="usernameup" placeholder="" id="usernameup" data-validate/>
           <label for="email">Email</label>
-          <input class="form-styling" type="text" name="email" placeholder="" id="email"/>
+          <input class="form-styling" type="text" name="email" placeholder="" id="email" data-validate/>
           <label for="password">Пароль</label>
-          <input class="form-styling" type="text" name="password" placeholder=""/>
+          <input class="form-styling" type="text" name="pass" placeholder="" id="pass" data-validate/>
           <label for="confirmpassword">Повторите пароль</label>
           <input class="form-styling" type="text" name="confirmpassword" placeholder="" id="confirmpassword"/>
-          <a ng-click="checked = !checked" class="btn-signup">Войти</a>
+                            <button type="submit" id="submit_signup"  ng-click="checked = !checked" class="btn-signup">Войти</button>
 				        </form>
 
             <div  class="success">
@@ -53,7 +53,8 @@
                   c3.894-6.28,11.169-10.243,19.283-9.348c9.258,1.021,16.694,8.542,17.622,17.81c1.232,12.295-8.683,22.607-20.849,22.042
                   c-9.9-0.46-18.128-8.344-18.972-18.218c-0.292-3.416,0.276-6.673,1.51-9.578" />
                 <div class="successtext">
-                   <p> Thanks for signing up! Check your email for confirmation.</p>
+                   <p> Спасибо за регистрацию.</p>
+                    <a class="btn-goback"  onClick="history.go(-1)">Назад</a>
                 </div>
              </div>
       </div>
@@ -65,8 +66,8 @@
       <div>
         <div class="cover-photo"></div>
         <div class="profile-photo"></div>
-        <h1 class="welcome">Привет, naaz</h1>
-        <a class="btn-goback" value="Refresh" onClick="history.go()">Назад</a>
+        <h1 class="welcome" id="hello_name"></h1>
+        <a class="btn-goback"  onClick="history.go(-1)">Назад</a>
       </div>
   </div>
     

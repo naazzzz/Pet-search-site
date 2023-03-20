@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -22,8 +24,12 @@ import static com.pss.PSS.model.enums.Role.USER;
 public class UserService  {
     private final UserRepository repository;
 
-    public UsersEntity getUser(String login){
-        return repository.findByUsername(login);
+    public ResponseEntity<UsersEntity> getUser(String login){
+        UsersEntity usersEntity= repository.findByUsername(login);
+        if(usersEntity.getUsername().isEmpty()){
+            return new ResponseEntity<>(usersEntity, HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(usersEntity);
     }
 
     public boolean checkUser(String login, String pass){

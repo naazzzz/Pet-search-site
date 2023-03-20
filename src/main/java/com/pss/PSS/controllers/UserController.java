@@ -5,6 +5,7 @@ import com.pss.PSS.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -16,14 +17,14 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService service;
 
-    @GetMapping("{login}")
-    public UsersEntity getUser(@PathVariable String login){
-        UsersEntity usersEntity = service.getUser(login);
+    @GetMapping("/{login}")
+    public ResponseEntity<UsersEntity> getUser(@PathVariable String login){
+        UsersEntity usersEntity = service.getUser(login).getBody();
         log.info(" get Авторизация пользователя "+login, usersEntity);
-        return usersEntity;
+        return ResponseEntity.ok(usersEntity);
     }
 
-    @PostMapping("{login}")
+    @PostMapping("/{login}")
     public boolean postUser(@PathVariable String login, @RequestParam String password) {
         log.info(" Проверка пользователя ");
         return service.checkUser(login, password);

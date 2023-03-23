@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsersEntity {
+public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
@@ -33,7 +33,7 @@ public class UsersEntity {
     private Role role;
 
 
-    public UsersEntity(String username, String email, String pass, Role role) {
+    public UserEntity(String username, String email, String pass, Role role) {
         this.username = username;
         this.email = email;
         this.pass = pass;

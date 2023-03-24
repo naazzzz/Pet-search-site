@@ -32,7 +32,7 @@ public class AdEntity {
     private String photo;
 
     @Column(name = "date")
-    private Date date;
+    private String date;
 
     @Column(name = "place")
     private String place;

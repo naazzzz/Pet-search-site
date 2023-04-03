@@ -11,7 +11,7 @@
     <div class="menu" >
       <div class="menu_wrapper">
         <div class="back_wrapper">  
-        <a href="/templates/html/wH_form1.html"><i class="fa fa-reply" aria-hidden="true"></i>Назад</a>
+        <a  onclick="javascript:history.back(); return false;"><i class="fa fa-reply" aria-hidden="true"></i>Назад</a>
         </div>
         <div class="menu_wrapper1">
       <a href="/MainWindow/CreateAd">Закрыть</a>
@@ -22,10 +22,10 @@
     <div class="top_info">
       <div class="top_info_wrapper">
         <div class="top_info_wrapper1">
-      <h1>Пропал питомец</h1>
+          <h1 id="wh" th:text="${wh}+' питомец'"></h1>
       <a href="">Главная / </a>
       <a href="">Новое объявление / </a>
-      <p>Пропал питомец</p>
+          <p th:text="${wh}+' питомец'"></p>
       <div class="progress_line">
         <div class="progress_line_bg bg2">
         </div>
@@ -51,7 +51,7 @@
             </label>
          </div>
     </form>
-    <a href="/templates/html/wH_form3.html" class="miss_form" id="miss_form">Пропустить шаг</a>
+    <a href="/MainWindow/CreateAd?form=lost&step=3" class="miss_form" id="miss_form">Пропустить шаг</a>
       </div>
     </div>
     </div>

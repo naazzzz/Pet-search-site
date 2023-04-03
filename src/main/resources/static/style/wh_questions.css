@@ -54,7 +54,7 @@ padding: 0px 0;
 }
 .qu1 p, .qu2 p{
     width: 100%;
-    height: 30px;
+    height: 60px;
     font-size: 18px;
     border-bottom: 1px solid;
     border-color: #77c0c7;
@@ -219,3 +219,26 @@ padding: 0px 0;
   .miss_form_active{
     visibility: hidden;
   }
+  .label_q2{
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  outline: none;
+  height: 40px;
+  width: 300px;
+  font-size: 18px;
+  }
+
+.label_q3{
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    outline: none;
+    height: 158px;
+    width: 50%;
+    font-size: 18px;
+}

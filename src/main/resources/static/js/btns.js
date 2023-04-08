@@ -1,3 +1,12 @@
+for (let i = 0; i < window.localStorage.length; i++) {
+    if (window.localStorage.key(i)==="kind"){
+
+    }
+    if (window.localStorage.key(i)==="sex"){
+
+    }
+}
+
 var qu1=false;
 var qu2=false;
 var qu1_select_text;

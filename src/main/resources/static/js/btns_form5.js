@@ -1,23 +1,11 @@
 
-//showImages();
-function showImages() {
-    var img = document.getElementById("img");
+document.getElementById("submit").addEventListener('click', function (){
+    var name = document.getElementById("name").value;
+    var telephone = document.getElementById("telephone").value;
+    var email = document.getElementById("email").value;
+    if(!(name==="" || telephone==="" || email==="")) {
 
-    var parentDiv = document.getElementById('preview');
-    if (parentDiv.contains(img)) {
-        parentDiv.prepend(img);
-    } else if (parentDiv.contains(img) === false) {
-        for (let i = 0; i < window.localStorage.length; i++) {
-            let res = window.localStorage.getItem(window.localStorage.key(i));
-            var image = new Image();
-            var button = document.createElement("button");
-            button.innerHTML = "Delete";
-            button.setAttribute('class' , 'deleteButton');
-            //button.setAttribute('onclick',DeleteImage('${window.localStorage.key(i)}'));
-                    image.src = res;
-                    image.setAttribute('id', 'img');
-                    parentDiv.append(image);
-                    parentDiv.append(button);
-                }
-        }
-}
+
+    }
+    else alert("Для перехода дальше заполните все подпункты в форме");
+});

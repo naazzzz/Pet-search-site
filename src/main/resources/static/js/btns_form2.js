@@ -60,7 +60,9 @@ document.getElementById('input__file').addEventListener('change', function (elem
 
   });
 
-
+document.getElementById("miss_form").addEventListener("click", function (){
+   localStorage.setItem("photo","none");
+});
 
 document.getElementById('btn_next1').addEventListener('click',function(){
 

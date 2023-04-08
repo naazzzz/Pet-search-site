@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/style/wh_questions.css">
     <link rel="stylesheet" href="/style/font-awesome-4.7.0/css/font-awesome.min.css">
     <script defer src="/js/btns.js"></script>
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
   </head>
   <body>
     <div class="menu" >
@@ -19,8 +20,8 @@
       <div class="top_info_wrapper">
         <div class="top_info_wrapper1">
       <h1 id="wh" th:text="${wh}+' питомец'"></h1>
-      <a href="">Главная / </a>
-      <a href="">Новое объявление / </a>
+      <a href="/MainWindow">Главная / </a>
+      <a href="/MainWindow/CreateAd">Новое объявление / </a>
       <p th:text="${wh}+' питомец'"></p>
       <div class="progress_line">
         <div class="progress_line_bg">
@@ -30,12 +31,12 @@
         <h1 th:text="'1/5:' + ${wh_step}"></h1>
         <p>Укажите вид и пол вашего питомца</p>
         <div class="qus">
-          <div class="qu1">
+          <div class="qu3">
             <p>Вид питомца</p><br>
             <button id="q1_btn1" onclick="btnClick(this)">Собака</button>
             <button id="q1_btn2" onclick="btnClick(this)">Кошка</button>
           </div>
-          <div class="qu2">
+          <div class="qu3">
             <p>Пол питомца</p><br>
             <button id="q2_btn1" onclick="btnClick(this)">Мальчик</button>
             <button id="q2_btn2" onclick="btnClick(this)">Девочка</button><br>

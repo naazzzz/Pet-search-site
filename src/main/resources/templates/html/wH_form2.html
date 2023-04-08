@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/style/wh_questions.css">
     <link rel="stylesheet" href="/style/font-awesome-4.7.0/css/font-awesome.min.css">
     <script defer src="/js/btns_form2.js"></script>
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
 </head>
   <body>
     <div class="menu" >
@@ -14,7 +15,7 @@
         <a  onclick="javascript:history.back(); return false;"><i class="fa fa-reply" aria-hidden="true"></i>Назад</a>
         </div>
         <div class="menu_wrapper1">
-      <a href="/MainWindow/CreateAd">Закрыть</a>
+      <a href="/MainWindow/CreateAd"  id="close_btn">Закрыть</a>
       <i class="fa fa-times" aria-hidden="true"></i>
     </div>
   </div>
@@ -23,8 +24,8 @@
       <div class="top_info_wrapper">
         <div class="top_info_wrapper1">
           <h1 id="wh" th:text="${wh}+' питомец'"></h1>
-      <a href="">Главная / </a>
-      <a href="">Новое объявление / </a>
+      <a href="/MainWindow">Главная / </a>
+      <a href="/MainWindow/CreateAd">Новое объявление / </a>
           <p th:text="${wh}+' питомец'"></p>
       <div class="progress_line">
         <div class="progress_line_bg bg2">
@@ -34,21 +35,26 @@
         <h1>2/5: Фото</h1>
         <p>Добавьте фотографии. Это увеличит шансы на нахождение питомца.</p>
         <div class="qus">
-          <div class="qu1">
+          <div class="qu3">
             <p>Фотографии</p><br>
           </div>
         </div>
         <div class="invisible_block" id="invisible_block">
+
     <img id="photo_download" class="photo_download"><br>
+          <div id="preview">
+
+          </div>
     <button class="btn_next" id="btn_next1">Далее</button>
   </div>
     <form id="form_download" action="/templates/html/wH_form3.html" method="post" enctype="multipart/form-data">
         <div class="input__wrapper">
-            <input name="file" type="file" id="input__file" class="input input__file" multiple>
+            <input name="file" type="file" id="input__file" class="input input__file" multiple >
             <label for="input__file" class="input__file-button">
                <span class="input__file-icon-wrapper"><i class="fa fa-download" aria-hidden="true"></i></span>
                <span class="input__file-button-text">Выберите файл</span>
             </label>
+
          </div>
     </form>
     <a href="/MainWindow/CreateAd?form=lost&step=3" class="miss_form" id="miss_form">Пропустить шаг</a>

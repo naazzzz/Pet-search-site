@@ -1,8 +1,7 @@
-document.getElementById('btn_next2').addEventListener('click',function(){
 
-    localStorage.setItem("date",document.getElementById("date").value);
-    localStorage.setItem("place",document.getElementById("place").value);
+document.getElementById('btn_next3').addEventListener('click',function(){
 
+    localStorage.setItem("description",document.getElementById("description").value);
     let params = window
         .location
         .search
@@ -16,5 +15,5 @@ document.getElementById('btn_next2').addEventListener('click',function(){
             },
             {}
         );
-    document.location='/MainWindow/CreateAd?form='+ params['form'] +'&step=4';
+    document.location='/MainWindow/CreateAd?form='+ params['form'] +'&step=5';
 });

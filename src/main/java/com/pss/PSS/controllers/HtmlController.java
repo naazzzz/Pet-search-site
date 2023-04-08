@@ -19,12 +19,16 @@ public class HtmlController {
     public String createAd(@RequestParam(defaultValue = "def") String form,@RequestParam(defaultValue = "0")int step, Model model){
         log.info("get createAd");
         switch (form){
-            case "find":
-                model.addAttribute("wh"," Найден");
-                model.addAttribute("wh_step"," Кого вы нашли?");
-            case "lost":
-                model.addAttribute("wh"," Потерян");
-                model.addAttribute("wh_step"," Кто пропал:?");
+            case "find": {
+                model.addAttribute("wh", " Найден");
+                model.addAttribute("wh_step", " Кого вы нашли?");
+                break;
+            }
+            case "lost": {
+                model.addAttribute("wh", " Потерян");
+                model.addAttribute("wh_step", " Кто пропал:?");
+                break;
+            }
         }
         switch (step){
             case 1:

@@ -1,7 +1,7 @@
 
 document.getElementById('btn_next3').addEventListener('click',function(){
     var description = document.getElementById("description").value;
-    if(!description==="") {
+    if(!(description==="")) {
         localStorage.setItem("description", description);
         let params = window
             .location

@@ -1,5 +1,6 @@
 package com.pss.PSS.controllers;
 
+import com.pss.PSS.model.UserDescriptionEntity;
 import com.pss.PSS.model.UserEntity;
 import com.pss.PSS.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,13 @@ public class UserController {
             log.info(" Save user in db ");
             return new ResponseEntity<>(service.saveUser(entity), HttpStatus.OK);
         }
+
+    @PostMapping(value = "/description")
+    public ResponseEntity<UserDescriptionEntity> postCreateDescr(@RequestBody UserDescriptionEntity ud){
+        log.info(" Save user description in db ");
+        return new ResponseEntity<>(service.saveUserDesc(ud), HttpStatus.OK);
+    }
+
 
     }
 

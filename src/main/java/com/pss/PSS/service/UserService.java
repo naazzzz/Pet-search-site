@@ -1,6 +1,8 @@
 package com.pss.PSS.service;
 
+import com.pss.PSS.model.UserDescriptionEntity;
 import com.pss.PSS.model.UserEntity;
+import com.pss.PSS.repository.UserDescriptionRepository;
 import com.pss.PSS.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +20,7 @@ import static com.pss.PSS.model.enums.Role.USER;
 @Slf4j
 public class UserService  {
     private final UserRepository repository;
+    private final UserDescriptionRepository repository_desc;
 
     public ResponseEntity<UserEntity> getUser(String login){
         UserEntity userEntity = repository.findByUsername(login);
@@ -42,5 +45,14 @@ public class UserService  {
         return repository.save(entity);
     }
 
+    public UserDescriptionEntity saveUserDesc(UserDescriptionEntity entity){
+
+        if(repository_desc.existsByEmail(entity.getEmail())){
+            return repository_desc.findByEmail(entity.getEmail());
+        }
+
+
+        return repository_desc.save(entity);
+    }
 
 }

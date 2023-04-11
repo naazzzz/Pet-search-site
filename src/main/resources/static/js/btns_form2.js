@@ -25,7 +25,8 @@ document.getElementById('input__file').addEventListener('change', function (elem
 
     reader.addEventListener("load", function () {
         if (this.result && localStorage) {
-            window.localStorage.setItem("photo", this.result);
+            window.localStorage.setItem("photo_data", this.result);
+            window.localStorage.setItem("photo_name", name);
         } else {
             alert();
         }
@@ -45,7 +46,8 @@ document.getElementById('input__file').addEventListener('change', function (elem
               button.setAttribute('class', 'deleteButton');
               button.setAttribute('id', 'deleteButton');
               button.onclick=function(){
-                  localStorage.removeItem('photo');
+                  localStorage.removeItem('photo_data');
+                  localStorage.removeItem('photo_name');
                   document.getElementById('form_download').className="";
                   document.getElementById('miss_form').className="miss_form";
                   document.getElementById('invisible_block').className="invisible_block";
@@ -61,7 +63,8 @@ document.getElementById('input__file').addEventListener('change', function (elem
   });
 
 document.getElementById("miss_form").addEventListener("click", function (){
-   localStorage.setItem("photo","none");
+   localStorage.setItem("photo_data","none");
+   localStorage.setItem("photo_name","none");
 });
 
 document.getElementById('btn_next1').addEventListener('click',function(){

@@ -7,8 +7,10 @@ import com.pss.PSS.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -22,6 +24,8 @@ public class UserService  {
     private final UserRepository repository;
     private final UserDescriptionRepository repository_desc;
 
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
     public ResponseEntity<UserEntity> getUser(String login){
         UserEntity userEntity = repository.findByUsername(login);
         if(userEntity.getUsername().isEmpty()){
@@ -32,16 +36,17 @@ public class UserService  {
 
     public boolean checkUser(String login, String pass){
         UserEntity user = repository.findByUsername(login);
-        if(Objects.equals(user.getUsername(), login) && Objects.equals(user.getPass(), pass)){
-            log.info(user.getUsername() + "="+login+" |"+user.getPass()+"= "+pass);
+        if( bCryptPasswordEncoder.matches(pass,user.getPass())){
+            log.info(user.getUsername() + "="+login+" |"+bCryptPasswordEncoder.matches(pass,user.getPass()));
             return true;
         }
-        log.info(user.getUsername() + "="+login+" |"+user.getPass()+"= "+pass);
+        log.info(user.getUsername() + "="+login+" |"+bCryptPasswordEncoder.matches(pass,user.getPass()));
         return false;
     }
 
     public UserEntity saveUser(UserEntity entity){
         entity.setRole(USER);
+        entity.setPass(bCryptPasswordEncoder.encode(entity.getPass()));
         return repository.save(entity);
     }
 

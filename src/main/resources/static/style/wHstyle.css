@@ -1,0 +1,75 @@
+body{
+    margin: 0px;
+}
+.header{
+    background-color: #7BA7AB;
+    border-radius: 15px;
+    background-image: none;
+    height: 100px;
+}
+main{
+    min-height: 100vh;
+    width: 100%;
+}
+.container{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    min-height: 100vh;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.find_box{
+    min-height: 100vh;
+    
+}
+.find_box_wrapper{
+width: 600px;
+height: 100%;
+margin: 0 auto;
+text-align: center;
+padding: 70px 0;
+}
+.info_box{
+    margin-left: 10%;
+}
+.info_box p, .info_box a{
+display: inline;
+text-decoration:none;
+}
+.info_box p{
+    margin-left: 10px;
+}
+.btn1, .btn2{
+    padding: 15px;
+    display: inline-block;
+    position: relative;
+    border: burlywood;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+    cursor: pointer;
+}
+.btn1{
+    background-color: #7BA7AB;
+}
+.btn1:hover{
+    background-color: #608b8f;
+}
+.btn2:hover{
+    background-color: rgb(197, 202, 202);
+}
+
+.find_box_wrapper a{
+    text-decoration: none;
+}
+.find_box_wrapper img{
+    height: 300px;
+}
+.nav a{
+    color: white;
+}
+form button{
+    background:#77c0c7;
+}
+input{
+    background-color: aliceblue;
+}

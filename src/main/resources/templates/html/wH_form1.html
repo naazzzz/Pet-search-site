@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <title>Pet Search Service</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+    <link rel="stylesheet" href="/style/wh_questions.css">
+    <link rel="stylesheet" href="/style/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script defer src="/js/btns.js"></script>
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="menu" >
+      <div class="menu_wrapper">
+        <div class="menu_wrapper1">
+      <a href="/MainWindow/CreateAd">Закрыть<i class="fa fa-times" aria-hidden="true"></i></a>
+    </div>
+  </div>
+    </div>
+    <div class="top_info">
+      <div class="top_info_wrapper">
+        <div class="top_info_wrapper1">
+      <h1 id="wh" th:text="${wh}+' питомец'"></h1>
+      <a href="/MainWindow">Главная / </a>
+      <a href="/MainWindow/CreateAd">Новое объявление / </a>
+      <p th:text="${wh}+' питомец'"></p>
+      <div class="progress_line">
+        <div class="progress_line_bg">
+        </div>
+      </div>
+      <div class="question">
+        <h1 th:text="'1/5:' + ${wh_step}"></h1>
+        <p>Укажите вид и пол вашего питомца</p>
+        <div class="qus">
+          <div class="qu3">
+            <p>Вид питомца</p><br>
+            <button id="q1_btn1" onclick="btnClick(this)">Собака</button>
+            <button id="q1_btn2" onclick="btnClick(this)">Кошка</button>
+          </div>
+          <div class="qu3">
+            <p>Пол питомца</p><br>
+            <button id="q2_btn1" onclick="btnClick(this)">Мальчик</button>
+            <button id="q2_btn2" onclick="btnClick(this)">Девочка</button><br>
+          </div>
+        </div>
+        <button class="btn_next" id="btn_next">Далее</button>
+      </div>
+    </div>
+    </div>
+    </div>
+  
+  </body>
+</html>

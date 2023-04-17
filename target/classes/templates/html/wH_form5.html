@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<title>Pet Search Service</title>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+  <link rel="stylesheet" href="/style/wh_questions.css">
+  <link rel="stylesheet" href="/style/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script defer src="/js/btns_form5.js"></script>
+  <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
+</head>
+<body>
+<div class="menu" >
+  <div class="menu_wrapper">
+    <div class="back_wrapper">
+      <a onclick="javascript:history.back(); return false;"><i class="fa fa-reply" aria-hidden="true"></i>Назад</a>
+    </div>
+    <div class="menu_wrapper1">
+      <a href="/MainWindow/CreateAd">Закрыть</a>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+<div class="top_info">
+  <div class="top_info_wrapper">
+    <div class="top_info_wrapper1">
+      <h1 id="wh" th:text="${wh}+' питомец'"></h1>
+      <a href="/MainWindow">Главная / </a>
+      <a href="/MainWindow/CreateAd">Новое объявление / </a>
+      <p th:text="${wh}+' питомец'"></p>
+      <div class="progress_line">
+        <div class="progress_line_bg bg5">
+        </div>
+      </div>
+      <div class="question">
+        <h1>5/5:  Контакты</h1>
+        <p th:text="${wh}+' питомец'"></p>
+        <div class="qus">
+          <form class="form_step_3">
+            <div class="qu3">
+              <p class="p_form4">Имя</p>
+              <br>
+              <input class="label_q2" type="text" id="name" name="name">
+            </div>
+            <div class="qu3">
+              <p class="p_form4">Телефон</p>
+              <br>
+              <input class="label_q2" type="text" id="telephone" name="telephone" value="+7">
+            </div>
+            <div class="qu3">
+              <p class="p_form4">Email</p>
+              <br>
+              <input class="label_q2" type="text" id="email" name="email" >
+            </div>
+
+          </form>
+
+        </div>
+        <div id="preview">
+
+        </div>
+        <img id="img" class="photo_download">
+        <button class="btn_next" id="submit">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+</body>
+</html>

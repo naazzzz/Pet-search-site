@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script defer src="/js/dropdown.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="all" href="/style/MainStyle.css" th:href="@{/style/MainStyle.css}">
+    <link rel="stylesheet" href="/style/slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="/js/slider.js"></script>
+    <link rel="stylesheet" href="/style/swapper.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <title>Pet Search Service</title>
+</head>
+<body>
+<nav class="header">
+    <div class="Logo">
+        <div class="navigation">
+            <ul class="nav">
+                <li class ="nav0"><a href="/MainWindow"><img src ="/img/Logo.png" class="mainLogo"></a>
+                <li class ="nav1"><a href="/MainWindow/Ads">Каталог</a>
+                <li class ="nav2"><a href="">Помощь</a>
+                <li class ="nav3"><div class="search_field">
+                    <form action="" method="get">
+                        <input placeholder="Адрес или номер объявления" type="search">
+                        <button class="fa-search" type="submit"></button>
+                    </form></div></li>
+                <li class = "nav4"><div class="user">
+                    <h1 class="sity"> Ростов-на-Дону</h1>
+                    <a href="/UserProfile"><i class="cards fa-address-card-o " aria-hidden="true"></i>Профиль : <h1 class="user_profile" th:text="${username}"></h1></a>
+                </div></li>
+            </ul>
+        </div>
+    </div>
+    <div class="promo">
+
+        <div class="promo_contain">
+            <h1>Поможем найти вашего друга</h1>
+            <p>Сервис для поиска потерянных домашних животных</p>
+
+            <div class="btns">
+                <button class="map_button1" onclick="document.location='MainWindow/Ads'"><h1>Перейти к объявлениям</h1><img class="icon_photo" src="/img/map-icon.png"></button>
+                <button class="map_button" onclick="document.location='MainWindow/CreateAd'"><h1>Создать объявление</h1></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</nav>
+<main>
+    <div class="content">
+        <div class="slider1">
+            <h1 class="ad">Последние актуальные объявления</h1>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/img/Слайдер1.jpg">
+                        <p>Собака по кличке Боня<br><br>
+                            Время пропажи: 21:00<br><br>
+                            Место пропажи: Р-н Северный, улица Орбитальная<br><br>
+                            Примечания: Была в бежевом наморднике и черном ошейнике с оранжевыми вставками по краям
+                            <br><br><a href="" class="floating-button">Посмотреть</a></p>
+                    </div>
+                    <div class="swiper-slide"><img src="/img/Слайдер1.jpg">
+                        <p>Собака по кличке Боня<br><br>
+                            Время пропажи: 21:00<br><br>
+                            Место пропажи: Р-н Северный, улица Орбитальная<br><br>
+                            Примечания: Была в бежевом наморднике и черном ошейнике с оранжевыми вставками по краям
+                            <br><br><a href="" class="floating-button">Посмотреть</a></p>
+                    </div>
+                    <div class="swiper-slide"><img src="/img/Слайдер1.jpg">
+                        <p>Собака по кличке Боня<br><br>
+                            Время пропажи: 21:00<br><br>
+                            Место пропажи: Р-н Северный, улица Орбитальная<br><br>
+                            Примечания: Была в бежевом наморднике и черном ошейнике с оранжевыми вставками по краям
+                            <br><br><a href="" class="floating-button">Посмотреть</a></p>
+                    </div>
+                    <div class="swiper-slide"><img src="/img/Слайдер1.jpg">
+                        <p>Собака по кличке Боня<br><br>
+                            Время пропажи: 21:00<br><br>
+                            Место пропажи: Р-н Северный, улица Орбитальная<br><br>
+                            Примечания: Была в бежевом наморднике и черном ошейнике с оранжевыми вставками по краям
+                            <br><br><a href="" class="floating-button">Посмотреть</a></p>
+                    </div>
+                    <div class="swiper-slide"><img src="/img/Слайдер1.jpg">
+                        <p>Собака по кличке Боня<br><br>
+                            Время пропажи: 21:00<br><br>
+                            Место пропажи: Р-н Северный, улица Орбитальная<br><br>
+                            Примечания: Была в бежевом наморднике и черном ошейнике с оранжевыми вставками по краям
+                            <br><br><a href="" class="floating-button">Посмотреть</a></p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+        </div>
+    </div>
+    <div class="qr_mobile">
+        <h1 class="ad questions">Воспользуйтесь мобильным приложением</h1>
+        <div class="mega_wrapper">
+            <div class="qr_photo_wrapper">
+                <div class="qr_photo">
+                    <div class="p_blc">
+                        <p>Скачать по ссылке с помощью QR-кода</p>
+                    </div>
+                    <img src="/img/qr.png">
+                </div>
+            </div>
+            <div class="download">
+                <div class="download_wrapper">
+                    <div class="dd"><div class="p_blc">
+                        <p>Скачать по прямой ссылке с нашего сервиса<br>
+                            для Android
+                            </b></p></div>
+                        <button class="button_download">Скачать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="acc">
+        <h1 class="ad questions "> Часто задаваемые вопросы</h1>
+        <button class="accordion">Я потерял питомца или нашел питомца на улице. Что делать?</button>
+        <div class="panel">
+            <p>Добавьте объявление о пропавшем или найденном питомце по этой ссылке. Добавьте фотографию питомца, максимально опишите питомца и обстоятельства потери/находки, укажите свои контактные данные, планируется ли вознаграждение нашедшему и опубликуйте объявление. После размещения объявления вы получите подробные рекомендации по поиску пропавшего животного.</p>
+        </div>
+        <button class="accordion">Могу ли я опубликовать объявление бесплатно?</button>
+        <div class="panel">
+            <p>Да, объявления публикуются на сайте бесплатно. Но мы рекомендуем воспользоваться платными опциями, которые серьезно повышают шансы быстрее вернуть пропавшего питомца домой. </p>
+        </div>
+        <button class="accordion">Кто такие волонтеры и кто может им стать?</button>
+        <div class="panel">
+            <p>Волонтеры – это люди, зарегистрировавшиеся на сайте, которые помогают в поисках пропавших животных. Волонтерам приходят уведомления о пропавших питомцах в районе их места жительства и работы, и они добровольно оказывают посильную помощь в поисках. Волонтером может стать любой человек, неравнодушный к животным.  </p>
+        </div>
+        <button class="accordion">Возможно ли связаться с вашими волонтерами?</button>
+        <div class="panel">
+            <p>Мы не можем поделиться с вами контактами волонтеров, но все волонтеры в районе пропажи или находки питомца получат уведомления на почту о вашем случае и постараются оказать посильную помощь. </p>
+        </div>
+        <button class="accordion">Какие гарантии что мой питомец найдется?</button>
+        <div class="panel">
+            <p>Мы не можем гарантировать что ваш питомец обязательно найдется. Но накопленный нами опыт позволяет в несколько раз увеличить шансы на успешное завершение поисков.</p>
+        </div>
+        <button class="accordion">Как снять объявление с сайта?</button>
+        <div class="panel">
+            <p>Перейдите в свой профиль (на компьютере иконка в правом верхнем углу, на телефоне – в правом нижнем). Напротив объявления вы увидите красную надпись “Снять с публикации”, после нажатия на которую ваше объявление удалится из каталога, но останется у вас в профиле на странице “Снятые с публикации”.</p>
+        </div>
+    </div>
+</main>
+</body>
+<footer>
+    <ul class="social-icons">
+        <li><a class="social-icon-twitter" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-fb" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-vk" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-telegram" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-youtube" href="#" title="..." target="_blank" rel="noopener"></a></li>
+    </ul>
+
+    <div class="footer-contacts" >
+        <div class="email">artem_berezhnov@mail.ru</div>
+        <div class ="copyright">© «petsearch.ru», 2022</div>
+    </div>
+
+</footer>
+
+</html>

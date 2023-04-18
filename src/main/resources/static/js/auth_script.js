@@ -40,6 +40,7 @@ $(function() {
                     $(".btn-goback").toggleClass("btn-goback-up");
                     $(".forgot").toggleClass("forgot-fade");
                     document.getElementById("hello_name").textContent = "Привет, " + $('#username').val();
+                    document.cookie="Authorization : Bearer "+data.token;
                 } else {
                     alert("Ошибка авторизации. Пожалуйста, проверьте логин и пароль");
                 }

@@ -33,12 +33,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return UserDetailsImpl.build(user);
 	}
 
-	public ResponseEntity<Optional<User>> getUser(String login){
-		Optional<User> user = userRepository.findByUsername(login);
-		if(user.isEmpty()){
-			return new ResponseEntity<>(user, HttpStatus.NOT_FOUND);
-		}
-		return ResponseEntity.ok(user);
+	public User getUser(String login){
+		return userRepository.getUserByUsername(login);
 	}
 
 	public UserDescriptionEntity saveUserDesc(UserDescriptionEntity entity){

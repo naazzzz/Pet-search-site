@@ -46,17 +46,6 @@ public class HtmlController {
 
     @GetMapping("/MainWindow/CreateAd")
     public String createAd(@RequestParam(defaultValue = "def") String form,@RequestParam(defaultValue = "0")int step, Model model){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-        if(service.getUser(username)!=null) {
-            User user = service.getUser(username);
-            model.addAttribute("username", user.getUsername());
-            log.info("get createAd window from user:" + user.getUsername());
-            return "html/wHFromUsers";
-        }
-        else{
-            log.info("get createAd window from none auth user");
-        }
         switch (form){
             case "find": {
                 model.addAttribute("wh", " Найден");
@@ -69,6 +58,33 @@ public class HtmlController {
                 break;
             }
         }
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        if(service.getUser(username)!=null) {
+            User user = service.getUser(username);
+            model.addAttribute("username", user.getUsername());
+            log.info("get createAd window from user:" + user.getUsername());
+
+            switch (step){
+                case 1:
+                    return "html/wH_form1";
+                case 2:
+                    return "html/wH_form2";
+                case 3:
+                    return "html/wH_form3";
+                case 4:
+                    return "html/wH_form4";
+                case 5:
+                    return "html/wH_form5";
+                default:
+                    return "html/wHFromUsers";
+            }
+        }
+        else{
+            log.info("get createAd window from none auth user");
+        }
+
         switch (step){
             case 1:
                 return "html/wH_form1";

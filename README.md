@@ -1,43 +1,7 @@
-# spring-jwt-realization
-In this project I realize full mechanism of user login and registration. Also Implement Role Based Action Control.
+# Pet-search-site
 
-To implement it, I used `Spring Boot`, `Spring Data JPA` and `Postgres` to store data, `Spring Security 5` to implement security issues, `JWT` to communicate between `Server` and `Client`. 
+![screencapture-127-0-0-1-5500-front-html-MainWindow-html-2023-01-28-22_15_34](https://user-images.githubusercontent.com/55109956/215286730-0deb433e-90fc-48c0-9c5f-964e1ef3ed13.png)
+![screencapture-127-0-0-1-5500-front-html-wH-html-2023-01-28-22_15_59](https://user-images.githubusercontent.com/55109956/215286743-af29ea9e-f784-4fc8-801f-8c199a371f9e.png)
+![screencapture-127-0-0-1-5500-front-html-wH-form1-html-2023-01-28-22_16_25](https://user-images.githubusercontent.com/55109956/215286765-758d148b-e377-44b2-8b6b-c3672c51023e.png)
 
-# Running
-To run the application enter in the command line: `mvn spring-boot:run`
-
-After project running, schema in the Database created. First of all, you need some `Roles`:
-
-```
-INSERT INTO roles(name) VALUES('ROLE_USER');
-INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
-INSERT INTO roles(name) VALUES('ROLE_ADMIN');
-```
-
-# Signup
-`POST localhost:8080/api/auth/signup`
-```
-{
-    "username": "admin",
-    "email": "admin@gmail.com",
-    "password": "12345678",
-    "role": ["admin, moderator"]
-}
-```
-
-# Get JWT Token
-`POST localhost:8080/api/auth/signin`
-```
-{
-    "username": "admin",
-    "password": "1234"
-}
-```
-
-# Make Request to Secure API
-`localhost:8080/api/test/admin`
-
-```Bearer {jwt}```
-
-# Make Request to Public API
-`localhost:8080/api/test/all`
+...

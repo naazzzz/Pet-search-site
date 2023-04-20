@@ -74,10 +74,10 @@ body{
 }
 .nav .nav4{
   padding-top: 50px;
-  width: 40%;
+  width: 20%;
   height: 120px;
   margin-right: auto;
-  margin-left: 35%;
+  margin-left: 45%;
 }
 .nav a{
     
@@ -581,7 +581,7 @@ cursor: pointer;
     margin-left: 20%;
   }
   .nav .nav4{
-    margin-left: 20%;
+    margin-left: 25%;
     width: auto;
   }
   .qr_photo{

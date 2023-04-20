@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -32,5 +35,9 @@ public class AdServiceImpl {
     public AdEntity saveAd(AdEntity entity){
         entity.setStatus(Status.INACTIVE);
         return repository.save(entity);
+    }
+
+    public List<AdEntity> getAllActive(Status status){
+        return repository.getAllByStatus(status);
     }
 }

@@ -38,11 +38,6 @@ public class HtmlController {
         return "html/MainWindow";
     }
 
-//    @GetMapping("/MainWindow")
-//    public String MainWindowAll(){
-//        log.info("get main window");
-//        return "html/MainWindow";
-//    }
 
     @GetMapping("/MainWindow/CreateAd")
     public String createAd(@RequestParam(defaultValue = "def") String form,@RequestParam(defaultValue = "0")int step, Model model){
@@ -102,9 +97,14 @@ public class HtmlController {
     }
     @GetMapping("/Auth")
     public String Auth(){
+        log.info("get auth window");
         return "html/Auth";
     }
 
-
+    @GetMapping("/MainWindow/Ads")
+    public String Ads(){
+        log.info("get ads window");
+        return "html/MapWindow";
+    }
 
 }

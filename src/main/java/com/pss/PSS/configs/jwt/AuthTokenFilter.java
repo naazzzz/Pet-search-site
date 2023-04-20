@@ -1,5 +1,6 @@
 package com.pss.PSS.configs.jwt;
 
+import java.io.Console;
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -46,10 +47,19 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
 	private String parseJwt(HttpServletRequest request) {
 	    String headerAuth = request.getHeader("Cookie");
-
-	    if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Authorization : Bearer ")) {
-	      return headerAuth.substring(23, headerAuth.length());
+//		System.out.println(headerAuth);
+	    if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("PSS=Authorization : Bearer ") && headerAuth.startsWith(";")) {
+	      return headerAuth.substring(headerAuth.lastIndexOf("PSS=")+27, headerAuth.length());
 	    }
+		else{
+			String[] arr = headerAuth.split("; ");
+			for(int i=0;i<arr.length;i++){
+				//System.out.println(arr[i].substring(arr[i].lastIndexOf("PSS=")+27,arr[i].length()));
+				if(arr[i].startsWith("PSS=Authorization : Bearer ")){
+					return arr[i].substring(arr[i].lastIndexOf("PSS=")+27,arr[i].length());
+				}
+			}
+		}
 
 	    return null;
 	  }

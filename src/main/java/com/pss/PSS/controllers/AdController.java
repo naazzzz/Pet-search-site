@@ -2,6 +2,7 @@ package com.pss.PSS.controllers;
 
 
 import com.pss.PSS.models.AdEntity;
+import com.pss.PSS.models.enums.Status;
 import com.pss.PSS.service.AdServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -61,5 +63,10 @@ public class AdController {
         return uploadPath;
     }
 
+    @PostMapping("/allActive")
+    public ResponseEntity<List<AdEntity>> getAllActive(@RequestParam("status") Status status){
+
+        return new ResponseEntity<>(service.getAllActive(status), HttpStatus.OK);
+    }
 
 }

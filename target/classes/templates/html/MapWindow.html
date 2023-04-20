@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<title>Pet Search Service</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+    <link rel="stylesheet" href="/style/MainStyle.css">
+    <link rel="stylesheet" href="/style/wHstyle.css">
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=dc8c331a-d0c5-4d16-a4e2-9b3c453ad8f0&lang=ru_RU"
+            type="text/javascript">
+    </script>
+    <script src="/js/map.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="header">
+    <nav class="header">
+        <div class="Logo">
+            <div class="navigation">
+                <ul class="nav">
+                    <li class ="nav0"><a href="/MainWindow"><img src ="/img/Logo.png" class="mainLogo"></a>
+                    <li class ="nav1"><a href="">Каталог</a>
+                    <li class ="nav2"><a href="">Помощь</a>
+                    <li class ="nav3"><div class="search_field">
+                        <form action="" method="get">
+                            <input placeholder="Адрес или номер объявления" type="search">
+                            <button class="fa-search" type="submit"></button>
+                        </form></div></li>
+                    <li class = "nav4"><div class="user">
+                        <a href="/Auth"><h1 class="auth">Авторизация</h1></a>
+                    </div></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<main>
+    <div id="map" style="width: 100%; min-height: 100%; height:870px"></div>
+</main>
+</body>
+</html>

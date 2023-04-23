@@ -27,6 +27,8 @@ public class AdController {
     @Autowired
     AdServiceImpl service;
 
+    @Value("${global.upload.path}")
+    private String globaluploadPath;
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -56,7 +58,7 @@ public class AdController {
                 String uuidFile = UUID.randomUUID().toString();
                String resultFilename= uuidFile + "." + file.getOriginalFilename();
 
-               file.transferTo(new File(uploadPath+resultFilename));
+               file.transferTo(new File(globaluploadPath+uploadPath+resultFilename));
                return uploadPath+resultFilename;
         }
 

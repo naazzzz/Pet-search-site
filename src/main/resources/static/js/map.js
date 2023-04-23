@@ -28,11 +28,25 @@ $.ajax({
 
             response.forEach(function(item, i, arr) {
                 var address = item.place;
+                var adr=address.split(",");
+                var date=item.date;
+                var ndate=date.split("T");
                 if(item.kind==='cat') {
-                    ymaps.geocode(address).then(function (res) {
-                        var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                     // ymaps.geocode(address).then(function (res) {
+                     //    var coord = res.geoObjects.get(0).geometry.getCoordinates();
 
-                        var myPlacemark = new ymaps.Placemark(coord, null, {
+                        var myPlacemark = new ymaps.Placemark([adr[0],adr[1]], {
+                            // Зададим содержимое заголовка балуна.
+
+                            balloonContentHeader: '<h1 >Кошка</h1><br>',
+                            // Зададим содержимое основной части балуна.
+                            balloonContentBody: '<img src='+'"'+item.photo+'"'+'height="150" width="200"> <br/> ' +
+                                '<b>'+'"'+item.description+'"'+'</b> <br/> ',
+                            // Зададим содержимое нижней части балуна.
+                            balloonContentFooter: 'Дата:'+ndate[0]+'<br/>Время:'+ndate[1]+'<br/>'+'<button>Перейти на страницу с объявлением</button>',
+                            // Зададим содержимое всплывающей подсказки.
+                            hintContent: 'Кошка'
+                        }, {
                             // Опции.
                             // Необходимо указать данный тип макета. Показываем что это изображение.
                             iconLayout: 'default#image',
@@ -42,13 +56,24 @@ $.ajax({
                             iconImageSize: [40, 40]
                         });
                         myMap.geoObjects.add(myPlacemark);
-                    });
-                }
+                     // });
+                 }
                 if(item.kind==='dog') {
-                    ymaps.geocode(address).then(function (res) {
-                        var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                    // ymaps.geocode(address).then(function (res) {
+                    //     var coord = res.geoObjects.get(0).geometry.getCoordinates();
 
-                        var myPlacemark = new ymaps.Placemark(coord, null, {
+                        var myPlacemark = new ymaps.Placemark([adr[0],adr[1]], {
+                            // Зададим содержимое заголовка балуна.
+
+                            balloonContentHeader: '<h1 >Собака</h1><br>',
+                            // Зададим содержимое основной части балуна.
+                            balloonContentBody: '<img src='+'"'+item.photo+'"'+'height="150" width="200"> <br/> ' +
+                                '<b>'+'"'+item.description+'"'+'</b> <br/> ',
+                            // Зададим содержимое нижней части балуна.
+                            balloonContentFooter: 'Дата:'+ndate[0]+'<br/>Время:'+ndate[1]+'<br/>'+'<button>Перейти на страницу с объявлением</button>',
+                            // Зададим содержимое всплывающей подсказки.
+                            hintContent: 'Собака'
+                        }, {
                             // Опции.
                             // Необходимо указать данный тип макета. Показываем что это изображение.
                             iconLayout: 'default#image',
@@ -58,7 +83,7 @@ $.ajax({
                             iconImageSize: [40, 40]
                         });
                         myMap.geoObjects.add(myPlacemark);
-                    });
+                    // });
                 }
             });
 

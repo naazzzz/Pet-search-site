@@ -32,24 +32,39 @@ function btnClick(obj){
     }    
 }
 
-if(qu2===false && (obj.id==="q2_btn1" || obj.id==="q2_btn2")){
+if(qu2===false && (obj.id==="q2_btn1" || obj.id==="q2_btn2" || obj.id==="q2_btn3")){
     obj.className="btn_style_active";
     qu2=true;
     if(obj.id==="q2_btn1"){
         qu2_select_text="boy";
-    }else qu2_select_text="girl";
+    }
+    if(obj.id==="q2_btn1")
+    {
+        qu2_select_text="girl";
+    }
+    if(obj.id==="q2_btn3"){
+        qu2_select_text="indefined";
+    }
 }
-if(qu2===true && (obj.id==="q2_btn1" || obj.id==="q2_btn2")){
+if(qu2===true && (obj.id==="q2_btn1" || obj.id==="q2_btn2" || obj.id==="q2_btn3")){
 if(obj.id==="q2_btn1"){
     qu2_select_text="boy";
     obj.className="btn_style_active";
     document.getElementById("q2_btn2").className="btn_style_none";
+    document.getElementById("q2_btn3").className="btn_style_none";
 }
-else{
+    if(obj.id==="q2_btn2"){
     qu2_select_text="girl";
     obj.className="btn_style_active";
     document.getElementById("q2_btn1").className="btn_style_none";
-}    
+        document.getElementById("q2_btn3").className="btn_style_none";
+}
+    if(obj.id==="q2_btn3"){
+        qu2_select_text="indefined";
+        obj.className="btn_style_active";
+        document.getElementById("q2_btn1").className="btn_style_none";
+        document.getElementById("q2_btn2").className="btn_style_none";
+    }
 }
 }
 

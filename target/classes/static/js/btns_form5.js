@@ -30,11 +30,24 @@ $('#submit').click(function (e){
                 var place = localStorage.getItem("place");
                 var description = localStorage.getItem("description");
                 var user_description= response.id;
-
+                var params =  window
+                    .location
+                    .search
+                    .replace('?','')
+                    .split('&')
+                    .reduce(
+                        function(p,e){
+                            var a = e.split('=');
+                            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+                            return p;
+                        },
+                        {}
+                    );
+                var situation = params["form"];
 
                 if(photo==="none" || photo_data==="none"){
 
-                    var data = JSON.stringify({ "kind": kind, "sex": sex,"photo":"none" , "date":date, "place":place, "description":description, "user_description":user_description});
+                    var data = JSON.stringify({ "kind": kind, "sex": sex,"photo":"none" , "date":date, "place":place, "situation":situation , "description":description, "user_description":user_description});
 
                     $.ajax({
                         url:actionUrl,

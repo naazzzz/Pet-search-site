@@ -37,6 +37,9 @@ public class AdEntity {
     @Column(name = "place")
     private String place;
 
+    @Column(name = "situation")
+    private String situation;
+
     @Column(name = "description")
     private String description;
 

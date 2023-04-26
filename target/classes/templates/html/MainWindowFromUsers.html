@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"
+>
 <head>
     <script defer src="/js/dropdown.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -28,7 +30,7 @@
                         <button class="fa-search" type="submit"></button>
                     </form></div></li>
                 <li class = "nav4"><div class="user">
-                    <a href="/UserProfile"><i class="cards fa-address-card-o " aria-hidden="true"></i>Профиль : <h1 class="user_profile" th:text="${username}"></h1></a>
+                    <div th:insert="~{header :: user}"></div>
                 </div></li>
             </ul>
         </div>

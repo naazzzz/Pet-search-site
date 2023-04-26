@@ -65,6 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/ad/uploadfile/**").permitAll()
 				.antMatchers("/img/downloads/**").permitAll()
 				.antMatchers("/MainWindow/**").permitAll()
+				.antMatchers("/ad/findAll/**").permitAll()
 				.antMatchers("/templates/html/**").permitAll()
 				.antMatchers("/","/img/**","/js/**","/style/**","/style/font/awesome-4.7.0/**","/style/font/awesome-4.7.0/css/**","/style/font/awesome-4.7.0/fonts/**", "/style/font/awesome-4.7.0/less/**","/style/font/awesome-4.7.0/scss/**","/resources/static/**").permitAll()
 				.anyRequest().authenticated();

@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
     <link rel="stylesheet" href="/style/MainStyle.css">
     <link rel="stylesheet" href="/style/wHstyle.css">
+    <link rel="stylesheet" href="/style/MapStyle.css">
     <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -39,6 +40,30 @@
     </nav>
 </div>
 <main>
+    <div class="filter">
+        <div class="f1">
+        <h1>Фильтры: </h1>
+        </div>
+        <div class="f2">
+        <p>Кого ищем?</p>
+        <button id="cat">Кошки</button>
+        <button id="dog">Собаки</button>
+        </div>
+        <div class="f3">
+            <p>Статус:</p>
+        <button id="find">Найдены</button>
+        <button id="lost">Потеряны</button>
+        </div>
+        <div class="f4">
+            <p>Пол:</p>
+        <button id="boy">Мальчики</button>
+        <button id="girl">Девочки</button>
+        <button id="indefined">Не определен</button>
+        </div>
+        <div class="f5">
+            <button id="rm_filers">Сбросить фильтры</button>
+        </div>
+    </div>
     <div id="map" style="width: 100%; min-height: 100%; height:870px"></div>
 </main>
 </body>

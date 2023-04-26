@@ -1,5 +1,6 @@
 package com.pss.PSS.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.pss.PSS.models.User;
@@ -14,4 +15,6 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	Boolean existsByUsername(String username);
 	Boolean existsByEmail(String email);
 	User save(User entity);
+
+
 }

@@ -102,9 +102,26 @@ public class HtmlController {
     }
 
     @GetMapping("/MainWindow/Ads")
-    public String Ads(){
-        log.info("get ads window");
+    public String Ads(Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        if(service.getUser(username)!=null) {
+            User user = service.getUser(username);
+            model.addAttribute("username", user.getUsername());
+            log.info("get main window from user:" + user.getUsername());
+            return "html/MapWindowFromUsers";
+        }
+        else{
+            log.info("get main window from none auth user");
+        }
         return "html/MapWindow";
+    }
+
+    @GetMapping("/ModerationWindow")
+    @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+    public String moderation(Model model){
+        log.info("get moderation window");
+        return "html/ModerationWindow";
     }
 
 }

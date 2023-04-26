@@ -275,3 +275,11 @@ padding: 0px 0;
     text-align: left;
     margin-bottom: 4%;
 }
+.mod_img{
+    height: 100px;
+    width: 100px;
+}
+.mod_div{
+    margin: auto;
+    width: 100%;
+}

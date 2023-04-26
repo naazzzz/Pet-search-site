@@ -4,6 +4,7 @@ import com.pss.PSS.models.AdEntity;
 
 import com.pss.PSS.models.enums.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface AdRepository extends JpaRepository<AdEntity, Long> {
 
     List<AdEntity> getAllByStatus(Status status);
     AdEntity findById(int id);
+
+    List<AdEntity> getAllByIdIsNotNull();
 }

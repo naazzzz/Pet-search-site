@@ -40,4 +40,7 @@ public class AdServiceImpl {
     public List<AdEntity> getAllActive(Status status){
         return repository.getAllByStatus(status);
     }
+    public List<AdEntity> findAll(){
+        return repository.getAllByIdIsNotNull();
+    }
 }

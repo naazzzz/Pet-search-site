@@ -1,0 +1,9 @@
+.filter{
+/*padding: 4%;*/
+
+}
+.filter .f1,.filter .f2, .filter .f3, .filter .f4,.filter .f5{
+    display: inline-block;
+    margin: 2%;
+    text-align: center;
+}

@@ -203,11 +203,17 @@ padding: 0px 0;
   .back_wrapper{
       cursor: pointer;
     display: inline-block;
-    padding: 30px 0;
+
   }
   .back_wrapper i{
     padding-right: 10px;
   }
+
+  .back_wrapper .a_back{
+      padding: 30px 0;
+      display: flex;
+  }
+
   .menu_wrapper1 i{
     padding-left: 5px;
     color: burlywood;
@@ -276,10 +282,26 @@ padding: 0px 0;
     margin-bottom: 4%;
 }
 .mod_img{
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 20px;
 }
 .mod_div{
     margin: auto;
+    width: 50%;
+    border-bottom: 2px solid;
+    border-color: #77c0c7;
+    padding: 20px;
+}
+.mod_form{
+
+}
+.mod_form input{
+    margin: auto;
     width: 100%;
+}
+.mod_form button{
+    margin: auto;
+    width: 50%;
+    height: 50px;
 }

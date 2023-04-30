@@ -47,7 +47,7 @@ $('#submit').click(function (e){
 
                 if(photo==="none" || photo_data==="none"){
 
-                    var data = JSON.stringify({ "kind": kind, "sex": sex,"photo":"none" , "date":date, "place":place, "situation":situation , "description":description, "user_description":user_description});
+                    var data = JSON.stringify({ "kind": kind, "sex": sex,"photo":"/img/none.png" , "date":date, "place":place, "situation":situation , "description":description, "user_description":user_description});
 
                     $.ajax({
                         url:actionUrl,

@@ -43,4 +43,13 @@ public class AdServiceImpl {
     public List<AdEntity> findAll(){
         return repository.getAllByIdIsNotNull();
     }
+
+    public AdEntity updateStatus(AdEntity entity){
+        entity.setStatus(Status.ACTIVE);
+        return repository.save(entity);
+    }
+
+    public void deleteById(int id){
+        repository.deleteById(id);
+    }
 }

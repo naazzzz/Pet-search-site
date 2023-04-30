@@ -18,4 +18,6 @@ public interface AdRepository extends JpaRepository<AdEntity, Long> {
     AdEntity findById(int id);
 
     List<AdEntity> getAllByIdIsNotNull();
+
+    void deleteById(int id);
 }

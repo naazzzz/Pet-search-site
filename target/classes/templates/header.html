@@ -1,5 +1,6 @@
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="user">
-  <a href="/UserProfile"><i class="cards fa-address-card-o " aria-hidden="true"></i>Профиль : <h1 class="user_profile" th:text="${username}"></h1></a>
+  <a th:href="${adress}"><i class="cards fa-address-card-o " aria-hidden="true"></i><h1 class="h1_color" th:text="${role}"></h1>: <h1 class="user_profile" th:text="${username}"></h1></a>
+  <button id="exit" class="exit">Выход</button>
 </th:block>
 <th:block xmlns:th="http://www.thymeleaf.org" th:fragment="usernone">
   <a href="/Auth"><h1 class="auth">Авторизация</h1></a>

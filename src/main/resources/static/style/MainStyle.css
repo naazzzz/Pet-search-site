@@ -77,7 +77,12 @@ body{
   width: 20%;
   height: 120px;
   margin-right: auto;
-  margin-left: 45%;
+  margin-left: 35%;
+}
+.nav .nav4 a{
+   border: 2px burlywood solid;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .nav a{
     
@@ -581,7 +586,7 @@ cursor: pointer;
     margin-left: 20%;
   }
   .nav .nav4{
-    margin-left: 25%;
+    margin-left: 15%;
     width: auto;
   }
   .qr_photo{
@@ -607,4 +612,10 @@ cursor: pointer;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding-right: 10px;
+}
+.user .h1_color{
+    color: burlywood;
+}
+.exit{
+    height: 40px;
 }

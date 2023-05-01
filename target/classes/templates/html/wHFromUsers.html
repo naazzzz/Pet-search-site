@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script defer src="/js/btns.js" ></script>
   <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+
 </head>
 <body>
 <div class="header">
@@ -24,7 +27,7 @@
               <button class="fa-search" type="submit"></button>
             </form></div></li>
           <li class = "nav4"><div class="user">
-            <a href="/UserProfile"><i class="cards fa-address-card-o " aria-hidden="true"></i>Профиль : <h1 class="user_profile" th:text="${username}"></h1></a>
+            <div th:insert="~{header :: user}"></div>
           </div></li>
 
         </ul>
@@ -69,4 +72,5 @@
     <div class ="copyright">© «petsearch.ru», 2022</div>
   </div>
 </footer>
+<script src="/js/exit.js"></script>
 </html>

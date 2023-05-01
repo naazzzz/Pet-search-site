@@ -44,7 +44,7 @@ $.ajax({
                             balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                 '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                             // Зададим содержимое нижней части балуна.
-                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                             // Зададим содержимое всплывающей подсказки.
                             hintContent: 'Кошка'
                         }, {
@@ -80,7 +80,7 @@ $.ajax({
                             balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                 '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                             // Зададим содержимое нижней части балуна.
-                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                             // Зададим содержимое всплывающей подсказки.
                             hintContent: 'Собака'
                         }, {
@@ -121,7 +121,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Кошка'
                             }, {
@@ -148,7 +148,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Собака'
                             }, {
@@ -189,7 +189,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Кошка'
                             }, {
@@ -216,7 +216,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Собака'
                             }, {
@@ -257,7 +257,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Кошка'
                             }, {
@@ -284,7 +284,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Собака'
                             }, {
@@ -333,7 +333,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Кошка'
                             }, {
@@ -360,7 +360,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Собака'
                             }, {
@@ -409,7 +409,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Кошка'
                             }, {
@@ -436,7 +436,7 @@ $.ajax({
                                 balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                     '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                                 // Зададим содержимое нижней части балуна.
-                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                                balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                                 // Зададим содержимое всплывающей подсказки.
                                 hintContent: 'Собака'
                             }, {
@@ -489,7 +489,7 @@ $.ajax({
                             balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                 '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                             // Зададим содержимое нижней части балуна.
-                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                             // Зададим содержимое всплывающей подсказки.
                             hintContent: 'Кошка'
                         }, {
@@ -516,7 +516,7 @@ $.ajax({
                             balloonContentBody: '<img src=' + '"' + item.photo + '"' + 'height="150" width="200"> <br/> ' +
                                 '<b>' + '"' + item.description + '"' + '</b> <br/> ',
                             // Зададим содержимое нижней части балуна.
-                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button>Перейти на страницу с объявлением</button>',
+                            balloonContentFooter: 'Дата:' + ndate[0] + '<br/>Время:' + ndate[1] + '<br/>' + '<button onclick="goAd('+item.id+')"'+'>Перейти на страницу с объявлением</button>',
                             // Зададим содержимое всплывающей подсказки.
                             hintContent: 'Собака'
                         }, {
@@ -571,3 +571,6 @@ $.ajax({
 
 })
 
+function goAd(id){
+document.location="/Ad?ad="+id;
+}

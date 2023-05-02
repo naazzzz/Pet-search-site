@@ -1,0 +1,29 @@
+.ad{
+    margin: auto;
+    width: 100%;
+    border-bottom: 2px solid #77c0c7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ad_photo{
+    border-bottom: 2px solid #77c0c7;
+}
+.ad_photo img{
+    width: 50%;
+    height: 50%;
+}
+.map_style{
+    height: 400px;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+.user_description{
+    border-bottom: 2px solid #77c0c7;
+}
+.ad_description{
+    border-bottom: 2px solid #77c0c7;
+
+}
+.map_coord{
+    display: none;
+}

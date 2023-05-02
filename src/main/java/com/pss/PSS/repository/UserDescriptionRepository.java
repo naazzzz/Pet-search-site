@@ -10,5 +10,7 @@ public interface UserDescriptionRepository extends JpaRepository<UserDescription
 
     boolean existsByEmail(String email);
 
+    UserDescriptionEntity findById(int id);
+
 
 }

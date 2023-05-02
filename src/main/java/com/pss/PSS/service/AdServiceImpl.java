@@ -40,6 +40,10 @@ public class AdServiceImpl {
     public List<AdEntity> getAllActive(Status status){
         return repository.getAllByStatus(status);
     }
+
+    public List<AdEntity> getAllByUserId(Long id){
+        return repository.getAllByUserId(id);
+    }
     public List<AdEntity> findAll(){
         return repository.getAllByIdIsNotNull();
     }
@@ -51,5 +55,9 @@ public class AdServiceImpl {
 
     public void deleteById(int id){
         repository.deleteById(id);
+    }
+
+    public List<AdEntity> getTopAdsByDate(String date){
+        return repository.getTopByDate(date);
     }
 }

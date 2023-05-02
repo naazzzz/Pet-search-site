@@ -3,6 +3,8 @@ package com.pss.PSS.controllers;
 
 import com.pss.PSS.models.AdEntity;
 import com.pss.PSS.models.User;
+import com.pss.PSS.models.UserDescriptionEntity;
+import com.pss.PSS.service.AdServiceImpl;
 import com.pss.PSS.service.UserDetailsServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,22 +17,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Optional;
 
 @Controller
 @Slf4j
 public class HtmlController {
 
+
     @Autowired
     UserDetailsServiceImpl service;
-
-    AdController adController;
+    @Autowired
+    AdServiceImpl adService;
 
     @GetMapping("/MainWindow")
     public String MainWindow(Model model){
+//        System.out.println(adService.getTopAdsByDate());
+//System.out.println(LocalDate. now().toString());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
-        System.out.println(auth.getAuthorities().toString());
         switch (auth.getAuthorities().toString()){
             case "[ROLE_USER]":
                 if(service.getUser(username)!=null) {
@@ -100,6 +107,18 @@ public class HtmlController {
                 case 4:
                     return "html/wH_form4";
                 case 5:
+                    model.addAttribute("username",username);
+                    if(user.getUserDescriptionId()!=null){
+                        UserDescriptionEntity userDescriptionEntity= service.findDescById(user.getUserDescriptionId());
+                        model.addAttribute("name",userDescriptionEntity.getName());
+                        model.addAttribute("email",userDescriptionEntity.getEmail());
+                        model.addAttribute("telephone",userDescriptionEntity.getTelephone_number());
+                    }
+                    else {
+                        model.addAttribute("name","");
+                        model.addAttribute("email","");
+                        model.addAttribute("telephone","");
+                    }
                     return "html/wH_form5";
                 default:
                     return "html/wHFromUsers";
@@ -163,19 +182,64 @@ public class HtmlController {
         return "html/ModerationWindow";
     }
 
+
+    @GetMapping("/UserProfile")
+    @PreAuthorize("hasRole('USER')")
+    public String userProfile(Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        model.addAttribute("username",username);
+        User user = service.getUser(username);
+        if(user.getUserDescriptionId()!=null){
+            UserDescriptionEntity userDescriptionEntity= service.findDescById(user.getUserDescriptionId());
+            model.addAttribute("name",userDescriptionEntity.getName());
+            model.addAttribute("email",userDescriptionEntity.getEmail());
+            model.addAttribute("telephone",userDescriptionEntity.getTelephone_number());
+        }
+        else {
+            model.addAttribute("name","");
+            model.addAttribute("email","");
+            model.addAttribute("telephone","");
+        }
+        log.info("get user profile window");
+        return "html/UserProfile";
+    }
+
     @GetMapping("/Ad")
     public String Ad(@RequestParam int ad,Model model){
 
-        AdEntity adEntity = adController.getAd(ad).getBody();
+        AdEntity adEntity = adService.getAd(ad).getBody();
         assert adEntity != null;
         model.addAttribute("date", adEntity.getDate());
         model.addAttribute("description", adEntity.getDescription());
-        model.addAttribute("kind", adEntity.getKind());
         model.addAttribute("photo", adEntity.getPhoto());
         model.addAttribute("place", adEntity.getPlace());
-        model.addAttribute("sex", adEntity.getSex());
-        model.addAttribute("situation", adEntity.getSituation());//Перевести на русский
-        model.addAttribute("user_description", adEntity.getUser_description());
+        if (Objects.equals(adEntity.getKind(), "cat")){
+            model.addAttribute("kind", " Кошка");
+        }else {
+            model.addAttribute("kind", " Собака");
+        }
+        switch (adEntity.getSex()){
+            case "girl":
+                model.addAttribute("sex", "Девочка");
+                break;
+            case "boy":
+                model.addAttribute("sex", "Мальчик");
+                break;
+            case "indefined":
+                model.addAttribute("sex", "Не определен");
+                break;
+        }
+        if (Objects.equals(adEntity.getSituation(), "find")){
+            model.addAttribute("situation", "Найден(-а)");
+        }else {
+            model.addAttribute("situation", "Потерян(-а)");
+        }
+
+        UserDescriptionEntity userDescriptionEntity = service.findDescById(adEntity.getUser_description());
+        model.addAttribute("user_description_name", userDescriptionEntity.getName());
+        model.addAttribute("user_description_email", userDescriptionEntity.getEmail());
+        model.addAttribute("user_description_telephone", userDescriptionEntity.getTelephone_number());
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();

@@ -30,6 +30,7 @@ $('#submit').click(function (e){
                 var place = localStorage.getItem("place");
                 var description = localStorage.getItem("description");
                 var user_description= response.id;
+
                 var params =  window
                     .location
                     .search
@@ -87,7 +88,7 @@ $('#submit').click(function (e){
                         processData: false,
                         success: function (result) {
                             console.log(result);
-                            var data = JSON.stringify({ "kind": kind, "sex": sex,"photo":result, "date":date, "place":place, "description":description, "user_description":user_description});
+                            var data = JSON.stringify({ "kind": kind, "sex": sex,"photo":result, "date":date, "place":place, "situation":situation, "description":description, "user_description":user_description});
 
                             $.ajax({
                                 url:actionUrl,

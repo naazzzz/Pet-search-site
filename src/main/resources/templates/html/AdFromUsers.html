@@ -28,11 +28,11 @@
                     <li class ="nav0"><a href="/MainWindow"><img src ="/img/Logo.png" class="mainLogo"></a>
                     <li class ="nav1"><a href="/MainWindow/Ads">Каталог</a>
                     <li class ="nav2"><a href="">Помощь</a>
-                    <li class ="nav3"><div class="search_field">
-                        <form action="" method="get">
-                            <input placeholder="Адрес или номер объявления" type="search">
-                            <button class="fa-search" type="submit"></button>
-                        </form></div></li>
+<!--                    <li class ="nav3"><div class="search_field">-->
+<!--                        <form action="" method="get">-->
+<!--                            <input placeholder="Адрес или номер объявления" type="search">-->
+<!--                            <button class="fa-search" type="submit"></button>-->
+<!--                        </form></div></li>-->
                     <li class = "nav4"><div class="user">
                         <div th:insert="~{header :: user}"></div>
                     </div></li>
@@ -42,8 +42,44 @@
     </nav>
 </div>
 <main>
-
+    <div class="ad">
+        <div class="ad_photo">
+            <img th:src="${photo}">
+        </div>
+        <div class="ad_description">
+            <h1 th:text="${situation+kind}"></h1>
+            <p th:text="'Пол: '+${sex}"></p>
+            <p th:text="'Дата: '+${date}"></p>
+            <p th:text="'Описание: '+${description}"></p>
+        </div>
+        <div class="user_description">
+            <h1>Контакты для связи:</h1>
+            <p th:text="'Имя: '+${user_description_name}"></p>
+            <p th:text="'Почта: '+${user_description_email}"></p>
+            <p th:text="'Телефон: '+${user_description_telephone}"></p>
+        </div>
+        <div class="ad_map">
+            <h1>Место пропажи:</h1>
+            <p class="map_coord" id="map_coord" th:text="${place}"></p>
+            <div id="map" class="map_style"></div>
+        </div>
+    </div>
 </main>
 </body>
+<footer>
+    <ul class="social-icons">
+        <li><a class="social-icon-twitter" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-fb" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-vk" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-telegram" href="#" title="..." target="_blank" rel="noopener"></a></li>
+        <li><a class="social-icon-youtube" href="#" title="..." target="_blank" rel="noopener"></a></li>
+    </ul>
+
+    <div class="footer-contacts" >
+        <div class="email">artem_berezhnov@mail.ru</div>
+        <div class ="copyright">© «petsearch.ru», 2022</div>
+    </div>
+
+</footer>
 <script src="/js/exit.js"></script>
 </html>

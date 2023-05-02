@@ -2,8 +2,10 @@ package com.pss.PSS.controllers;
 
 
 import com.pss.PSS.models.AdEntity;
+import com.pss.PSS.models.User;
 import com.pss.PSS.models.enums.Status;
 import com.pss.PSS.service.AdServiceImpl;
+import com.pss.PSS.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +33,9 @@ public class AdController {
     @Autowired
     AdServiceImpl service;
 
+    @Autowired
+    UserDetailsServiceImpl userService;
+
     @Value("${global.upload.path}")
     private String globaluploadPath;
 
@@ -45,6 +52,12 @@ public class AdController {
     @PostMapping(value = "/create")
     public ResponseEntity<AdEntity> postCreate(@RequestBody AdEntity entity) throws IOException {
         log.info("POST Save ad in db ");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        User user = userService.getUser(username);
+        if(user!=null) {
+            entity.setUserId(user.getId());
+        }
         return new ResponseEntity<>(service.saveAd(entity), HttpStatus.OK);
     }
 
@@ -71,6 +84,15 @@ public class AdController {
     public ResponseEntity<List<AdEntity>> getAllActive(@RequestParam("status") Status status){
 
         return new ResponseEntity<>(service.getAllActive(status), HttpStatus.OK);
+    }
+
+    @GetMapping("/allAdsByUser")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<List<AdEntity>> getAllByUserId(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        User user= userService.getUser(username);
+        return new ResponseEntity<>(service.getAllByUserId(user.getId()), HttpStatus.OK);
     }
 
     @GetMapping("/findAll")

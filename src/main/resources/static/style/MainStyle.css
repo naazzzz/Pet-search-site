@@ -74,10 +74,9 @@ body{
 }
 .nav .nav4{
   padding-top: 50px;
-  width: 20%;
   height: 120px;
   margin-right: auto;
-  margin-left: 35%;
+  margin-left: 45%;
 }
 .nav .nav4 a{
    border: 2px burlywood solid;
@@ -477,6 +476,8 @@ cursor: pointer;
 .qr_photo img{
   left: 70px;
   position: relative;
+    height: 250px;
+    width: 250px;
 }
 .p_blc{
   

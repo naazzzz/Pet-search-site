@@ -20,4 +20,8 @@ public interface AdRepository extends JpaRepository<AdEntity, Long> {
     List<AdEntity> getAllByIdIsNotNull();
 
     void deleteById(int id);
+
+    List<AdEntity> getAllByUserId(Long id);
+
+    List<AdEntity> getTopByDate(String date);
 }

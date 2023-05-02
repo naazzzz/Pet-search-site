@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+<title>Pet Search Service</title>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport">
+    <link rel="stylesheet" href="/style/wh_questions.css">
+    <link rel="stylesheet" href="/style/user_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
+
 </head>
 <body>
+<div class="menu" >
+    <div class="menu_wrapper">
+        <div class="back_wrapper">
+            <h1 th:text="'Профиль пользоватея '+${username}">Профиль пользователя</h1>
+        </div>
+        <div class="menu_wrapper1">
+            <a href="/MainWindow">Закрыть<i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="user_info">
+        <div class="description_info">
+            <h4>Добавить информацию о пользователе:</h4>
+            <div class="desc_name">
+                <label for="name">Имя:</label>
+                <input type="text" name="name" id="name" th:value="${name}">
+                <br>
+            </div>
+            <div class="desc_email">
+                <label for="email">Почта:</label>
+                <input type="text" name="email" id="email" th:value="${email}">
+                <br>
+            </div>
+            <div class="desc_telephone">
+                <label for="telephone">Телефон:</label>
+                <input type="text" name="telephone" id="telephone" th:value="${telephone}">
+                <br>
+            </div>
+            <button id="user_desc_submit">Отправить</button>
+        </div>
+        <div class="user_ads">
+            <h4>Объявления:</h4>
+            <div class="all_ads">
 
+            </div>
+        </div>
+    </div>
+</main>
 </body>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+<script src="/js/user_profile.js"></script>
 </html>

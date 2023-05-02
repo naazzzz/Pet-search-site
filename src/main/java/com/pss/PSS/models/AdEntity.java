@@ -44,10 +44,10 @@ public class AdEntity {
     private String description;
 
     @Column(name = "user_description")
-    private String user_description;
+    private Integer user_description;
 
     @Column(name = "user_id")
-    private String user_id;
+    private Long userId;
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)

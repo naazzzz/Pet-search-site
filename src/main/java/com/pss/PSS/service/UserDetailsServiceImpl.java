@@ -38,6 +38,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return userRepository.getUserByUsername(login);
 	}
 
+	public User getUser(String login,Long id){
+		return userRepository.getUserByUsernameOrId(login,id);
+	}
+
 	public UserDescriptionEntity saveUserDesc(UserDescriptionEntity entity){
 
 		if(repository_desc.existsByEmail(entity.getEmail())){
@@ -47,6 +51,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		return repository_desc.save(entity);
 	}
+
+	public UserDescriptionEntity findDescById(int id) {
+	return repository_desc.findById(id);
+	}
+
+	public User saveUser(User user){
+		return userRepository.save(user);
+	}
+
+
 
 
 }

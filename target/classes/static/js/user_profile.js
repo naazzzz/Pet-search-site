@@ -242,7 +242,7 @@ $.ajax({
                     success: function () {
 
                         alert("Объявление успешно удалено");
-                        document.location="/ModerationWindow"
+                        document.location="/MainWindow"
                     },
                     error:function (er) {
                         alert("Ошибка ответа сервера"+er);

@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.rmi.ServerRuntimeException;
 import java.util.List;
 import java.util.UUID;
 
@@ -43,9 +44,9 @@ public class AdController {
     private String uploadPath;
 
     @GetMapping("/{id}")
-    public ResponseEntity<AdEntity> getAd(@PathVariable int id){
+    public ResponseEntity<AdEntity> getAd(@PathVariable int id) {
         AdEntity adsEntity = service.getAd(id).getBody();
-        log.info(" GET объявление с id: "+id+" {}", adsEntity);
+        log.info(" GET объявление с id: " + id + " {}", adsEntity);
         return ResponseEntity.ok(adsEntity);
     }
 
@@ -55,7 +56,7 @@ public class AdController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         User user = userService.getUser(username);
-        if(user!=null) {
+        if (user != null) {
             entity.setUserId(user.getId());
         }
         return new ResponseEntity<>(service.saveAd(entity), HttpStatus.OK);
@@ -64,40 +65,38 @@ public class AdController {
     @PostMapping("/uploadfile")
     public String handleFileUpload(@RequestParam("file") MultipartFile file) throws IOException {
 
-        if(file != null){
-              File uploadDir = new File(uploadPath);
-               if (!uploadDir.exists()){
-                   uploadDir.mkdir();
-               }
+        if (file == null) throw new RuntimeException("Файл отсутствует");
 
-                String uuidFile = UUID.randomUUID().toString();
-               String resultFilename= uuidFile + "." + file.getOriginalFilename();
 
-               file.transferTo(new File(globaluploadPath+uploadPath+resultFilename));
-               return uploadPath+resultFilename;
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdir();
         }
 
-        return uploadPath;
+        String uuidFile = UUID.randomUUID().toString();
+        String resultFilename = uuidFile + "." + file.getOriginalFilename();
+
+        file.transferTo(new File(globaluploadPath + uploadPath + resultFilename));
+        return uploadPath + resultFilename;
     }
 
     @PostMapping("/allActive")
-    public ResponseEntity<List<AdEntity>> getAllActive(@RequestParam("status") Status status){
-
-        return new ResponseEntity<>(service.getAllActive(status), HttpStatus.OK);
+    public ResponseEntity<List<AdEntity>> getAllActive(@RequestParam("status") Status status) {
+        return ResponseEntity.ok(service.getAllActive(status));
     }
 
     @GetMapping("/allAdsByUser")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<List<AdEntity>> getAllByUserId(){
+    public ResponseEntity<List<AdEntity>> getAllByUserId() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
-        User user= userService.getUser(username);
+        User user = userService.getUser(username);
         return new ResponseEntity<>(service.getAllByUserId(user.getId()), HttpStatus.OK);
     }
 
     @GetMapping("/findAll")
     @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-    public ResponseEntity<List<AdEntity>> findAll(){
+    public ResponseEntity<List<AdEntity>> findAll() {
 
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
@@ -113,7 +112,7 @@ public class AdController {
     public HttpStatus deleteAd(@RequestBody AdEntity adEntity) throws IOException {
         log.info("POST update status ACTIVE ad in db ");
         service.deleteById(adEntity.getId());
-        return  HttpStatus.OK;
+        return HttpStatus.OK;
     }
 
 }
